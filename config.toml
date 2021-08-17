@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://lucblassel-hugo-hbszgt2j9-lucblassel.vercel.app/"
 languageCode = "en-us"
 title = "Luc Blassel"
 theme = "hagan"
