@@ -4,6 +4,9 @@ title = "Luc Blassel"
 theme = "hagan"
 copyright = "Luc Blassel"
 
+[build]
+  writeStats = true
+
 [menu]
   # [[menu.main]]
   #   name = "Home"

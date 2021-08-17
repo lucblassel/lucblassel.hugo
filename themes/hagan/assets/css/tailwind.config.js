@@ -4,5 +4,9 @@ module.exports = {
     },
     // darkMode: 'media',
     variants: {},
-    plugins: []
+    plugins: [],
+    purge: {
+      enabled: true,
+      content: ['./src/**/*.html'],
+    },
   }
