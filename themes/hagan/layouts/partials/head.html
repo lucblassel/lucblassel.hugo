@@ -1,8 +1,32 @@
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{ $title := print .Site.Title " | " .Title }}
-    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
-    <title>{{ $title }}</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="{{ .Permalink }}"/>
+
+  {{/* Social sharing */}}
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+
+  {{/* Tailwind CSS */}}
+  {{ $styles := resources.Get "/css/styles.scss" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+  {{ if .Site.IsServer }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+  {{ else }}
+    {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+  {{ end }}
+  
+  {{/* Handle site title */}}
+  {{ $title := print .Site.Title " | " .Title }}
+  {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+  <title>{{- $title -}}</title>
+
+  {{/* Umami analytics */}}
+  {{ if not .Site.IsServer }}
+    <script async defer data-website-id="a966a423-bf66-4a01-bda1-8903d33f75a7" src="https://umami-production-7mid.up.railway.app/umami.js"></script>
+  {{ end }}
+
+  {{/* FontAwesome */}}
+  <script src="https://kit.fontawesome.com/1c4834cc82.js" crossorigin="anonymous"></script>
 </head>

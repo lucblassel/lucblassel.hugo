@@ -1,4 +1,66 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Luc Blassel"
 theme = "hagan"
+copyright = "Luc Blassel"
+
+[menu]
+  # [[menu.main]]
+  #   name = "Home"
+  #   url = "/"
+  #   weight = 1
+
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Publications"
+    url = "/publications/"
+    weight = 4
+
+  [[menu.main]]
+    name = "Other"
+    url = "/others/"
+    weight = 5
+
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 6
+
+  [[menu.socials]]
+    name = "Github"
+    url = "https://github.com/lucblassel"
+    pre = '<i class="fab fa-github"></i>'
+
+  [[menu.socials]]
+    name = "Pasteur"
+    url = "https://research.pasteur.fr/en/member/luc-blassel/"
+    pre = '<i class="fas fa-briefcase"></i>'
+
+  [[menu.socials]]
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/luc-blassel/"
+    pre = '<i class="fab fa-linkedin"></i>'
+
+  [[menu.socials]]
+    name = "ORCID"
+    url = "https://orcid.org/0000-0002-6598-7673"
+    pre = '<i class="fab fa-orcid"></i>'
+
+  [[menu.socials]]
+    name = "Google Scholar"
+    url = "https://scholar.google.fr/citations?user=RYs6rFwAAAAJ&hl=en&oi=ao"
+    pre = '<i class="fas fa-graduation-cap"></i>'
+
+  [[menu.socials]]
+    name = "Twitter"
+    url = "https://twitter.com/lucblassel"
+    pre = '<i class="fab fa-twitter"></i>'
