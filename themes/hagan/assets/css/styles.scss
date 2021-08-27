@@ -2,6 +2,9 @@
 @import "node_modules/tailwindcss/components";
 @import "node_modules/tailwindcss/utilities";
 
+// Hide recaptcha badge
+.grecaptcha-badge { visibility: hidden; }
+
 .post {
   h1 {
     @apply text-3xl font-bold pt-6;
@@ -67,4 +70,39 @@
       @apply text-blue-500 font-medium;
   }
 
+}
+
+.icon-container {
+
+  a {
+    div, b {
+      transition: opacity 1s linear;
+    }
+  }
+
+  a {
+    
+    div {
+      display: block;
+      opacity: 1;
+    }
+    
+    b {
+      display: none;
+      opacity: 0;
+    }
+  }
+
+  a:hover {
+
+    div {
+      display: none;
+      opacity: 0;
+    }
+
+    b {
+      display: block;
+      opacity: 1;
+    }
+  }
 }
