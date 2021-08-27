@@ -13,7 +13,7 @@ All right let's get started.
 
 <!--more-->
 
-# Example data
+# Example data {#simple-tree}
 
 We are going to use, as an example, the Fisher Iris dataset (more info <a></a>[here][1]) and we are going to build a tree that can separate the different types of irises (classes), which is called a classification tree.
 
@@ -46,11 +46,11 @@ Here our dataset is 4 dimensional, however it is a little complicated for use hu
 ![the iris dataset](/images/iris_dataset_base.svg)
 
 Now let's represent the splits in our decision trees as lines that separate the plane into 2 sub-planes:  
-For the first split, we can draw a vertical line that shows $petal\ length = 1.9$ that corresponds to the first split of our tree. As we can see in the figure below that perfectly separates _iris Setosa_ form the other two:
+For the first split, we can draw a vertical line that shows \\(petal\ length = 1.9\\) that corresponds to the first split of our tree. As we can see in the figure below that perfectly separates _iris Setosa_ form the other two:
 
 ![the first split](/images/iris_dataset_split_1.svg)
 
-Now we can draw our second split, the horizontal line representing $petal\ width = 1.7$. This split only divides the _right_ subspace of our first split, this is called <a></a>[recursive partitioning][4]. As you can see below, this separates our two remaining species, Vversicolor_ and _Virginica_ fairly well. However, near the boundary of this second split, we can see some of our Vversicolor_ flowers end un on the _Virginica_ side and _vice-versa_.
+Now we can draw our second split, the horizontal line representing \\(petal\ width = 1.7\\). This split only divides the _right_ subspace of our first split, this is called <a></a>[recursive partitioning][4]. As you can see below, this separates our two remaining species, _Versicolor_ and _Virginica_ fairly well. However, near the boundary of this second split, we can see some of our _Versicolor_ flowers end un on the _Virginica_ side and _vice-versa_.
 
 ![the second split](/images/iris_dataset_split_2.svg)
 
@@ -59,7 +59,7 @@ To understand that let's take a look at what the tree would look like if we kept
 
 ![an overfitted tree](/images/overfitted_tree.svg)
 
-As you can see this tree is a lot bigger and more complicated to take in, and it has splits that are very close to one another like $petal\ length = 4.9$ and $petal\ length = 4.8$
+As you can see this tree is a lot bigger and more complicated to take in, and it has splits that are very close to one another like \\(petal\ length = 4.9\\) and \\(petal\ length = 4.8\\)
 
 ![overfitted partitioning](/images/iris_splits_overfit.svg)
 
@@ -84,9 +84,11 @@ I've represented the decision paths (how the sample goes through the tree) of th
 
 ![decision paths in the simple tree](/images/decision_paths.svg)
 
-So for sample 2 _(the Versicolor)_ the petal length is $> 1.9$ so it goes right at the first node, the petal width is $\leq 1.7$ so it goes left at the second node and is correctly classified as Vversicolor_. The same goes for samples 1 and 3. Let's take our fourth sample now, its petal length is $5.8$ which is $>1.9$ so it goes right at the first split, until now everything is OK, however its petal width is $1.6$ which is $\leq 1.7$, so it will go left at the second split and be detected as _Versicolor_ even though it is a _Virginica_, so our tree made a mistake.  
+So for sample 2 _(the Versicolor)_ the petal length is \\(> 1.9\\) so it goes right at the first node, the petal width is \\(\leq 1.7\\) so it goes left at the second node and is correctly classified as Vversicolor_. The same goes for samples 1 and 3. Let's take our fourth sample now, its petal length is \\(5.8\\) which is \\(>1.9\\) so it goes right at the first split, until now everything is OK, however its petal width is \\(1.6\\) which is \\(\leq 1.7\\), so it will go left at the second split and be detected as _Versicolor_ even though it is a _Virginica_, so our tree made a mistake.  
+
 We can use these mistakes if our tree is representative of our data or not. To do this we separate a part of our dataset, before training our tree, into a **training** and a **testing** set (a classical split is to keep 20% of our data as testing data), after which we train our tree on the **training** set. To evaluate our model, we take all of the samples and run each of them through the tree and save the output _(ie. the predicted class)_. From this we can calculate the misclassification rate which is just the number of mistakes our tree makes divided by the total number of samples in the **testing** set.  
-Our tree making some small mistakes is inevitable (cases on a boundary between 2 classes can be a little tricky), and actually a good sign of a well-generalized model. Indeed if you see misclassification rates $\approx 0$ it is a strong sign that your tree might be overfitting and that the testing data is very similar to the training data.
+
+Our tree making some small mistakes is inevitable (cases on a boundary between 2 classes can be a little tricky), and actually a good sign of a well-generalized model. Indeed if you see misclassification rates \\(\approx 0\\) it is a strong sign that your tree might be overfitting and that the testing data is very similar to the training data.
 
 ## A note on regression
 
@@ -104,4 +106,4 @@ Stay tuned for <a></a>[part 2][6] where I will go over the CART algorithm for bu
 [3]: https://en.wikipedia.org/wiki/Sepal
 [4]: https://en.wikipedia.org/wiki/Recursive_partitioning
 [5]: https://en.wikipedia.org/wiki/Root-mean-square_deviation
-[6]: /blog/the-CART-algorithm
+[6]: {{< relref "/posts/the-CART-algorithm.markdown" >}}

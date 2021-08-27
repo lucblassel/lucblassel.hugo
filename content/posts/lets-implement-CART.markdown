@@ -75,7 +75,7 @@ since each node stores its left and right children, we can access any and all no
 
 # getting the splits
 
-Ok, so we can just concentrate ourselves on the `Node` class. So if you remember how the algorithm works _(if not <a></a>[here is the post](/blog/the-CART-algorithm) where I explain it)_, we are going to need a way to find splits in our data. As we said in previous parts, there are categorical and numerical splits, so we need a way to determine if a feature is categorical or numerical, fortunately `pandas` has us covered, and we can make a simple function:
+Ok, so we can just concentrate ourselves on the `Node` class. So if you remember how the algorithm works _(if not <a></a>[here is the post]({{< relref "/posts/the-CART-algorithm.markdown" >}}) where I explain it)_, we are going to need a way to find splits in our data. As we said in previous parts, there are categorical and numerical splits, so we need a way to determine if a feature is categorical or numerical, fortunately `pandas` has us covered, and we can make a simple function:
 
 ```python
 from pandas.api.types import is_categorical, is_string_dtype, is_bool
@@ -114,7 +114,7 @@ def get_numerical_splits(self, feature):
 ```
 
 This returns all possible numerical splits in a dictionary where the key is a `tuple` of the feature name, the value on which the split is done and the type of split, and as a value the data that goes to the left side of the split _(the data that respects the split condition)_.  
-For categorical features we are not going to follow exactly what I said in <a></a>[part 2](/blog/the-CART-algorithm), indeed the total number of splits is: $$2^{k-1} - 1$$, with $$k$$ the possible values of our feature, this can get huge very quickly. For example, a categorical feature with 25 levels (25 brands of car, or 25 different languages, whatever...), which can be easily attained in some datasets, would result in $$33554432$$ splits to evaluate, and that's just for one feature in one node. So this can get out of hand very quickly and slow our program to a crawl. So I'm going to make an executive decision here and say we will only consider splits made by a single level, for example `brand = Ford` and eliminate all splits made by combinations of levels: `(brand = Ford) or (brand = Chevrolet)`. This brings us back to a nice $$k$$ possible splits. So we can add this method to get categorical splits:
+For categorical features we are not going to follow exactly what I said in <a></a>[part 2]({{< relref "/posts/the-CART-algorithm.markdown" >}}), indeed the total number of splits is: \\(2^{k-1} - 1\\), with \\(k\\) the possible values of our feature, this can get huge very quickly. For example, a categorical feature with 25 levels (25 brands of car, or 25 different languages, whatever...), which can be easily attained in some datasets, would result in \\(33554432\\) splits to evaluate, and that's just for one feature in one node. So this can get out of hand very quickly and slow our program to a crawl. So I'm going to make an executive decision here and say we will only consider splits made by a single level, for example `brand = Ford` and eliminate all splits made by combinations of levels: `(brand = Ford) or (brand = Chevrolet)`. This brings us back to a nice \\(k\\) possible splits. So we can add this method to get categorical splits:
 
 ```python
 def get_categorical_splits(self, feature):
@@ -128,13 +128,13 @@ Ok all done, so now at a single node we can get all the dataset splits we want t
 
 # Computing impurity
 
-Next we need a way to calculate the impurity of a split, in our case is going to be the Gini index. For reminder the Gini index $$G$$ for a node $$t$$ is defined as:
+Next we need a way to calculate the impurity of a split, in our case is going to be the Gini index. For reminder the Gini index \\(G\\) for a node \\(t\\) is defined as:
 
 $$
 G(t) = 1 - \sum^k_{i=1} p_i^2
 $$
 
-Where $$p_i$$ is the proportion of samples of class $$i$$ in the node data, and $$k$$ is the number of different classes. So let's add a method to our `Node` class to do just that:
+Where \\(p_i\\) is the proportion of samples of class \\(i\\) in the node data, and \\(k\\) is the number of different classes. So let's add a method to our `Node` class to do just that:
 
 ```python
 def get_gini(self, data):
@@ -142,7 +142,7 @@ def get_gini(self, data):
     return 1 - (proportions ** 2).sum() # the ** applies to all elements of the column
 ```
 
-`value_counts()` is a `pandas` method that gets all unique values in a given column and returns their counts, the `normalize` option makes it return proportions instead of counts. The next step is computing the decrease in impurity $$\Delta i$$ (see part 2 for formula).
+`value_counts()` is a `pandas` method that gets all unique values in a given column and returns their counts, the `normalize` option makes it return proportions instead of counts. The next step is computing the decrease in impurity \\(\Delta i\\) (see part 2 for formula).
 
 ```python
 def get_delta_i(self, subset):
@@ -161,7 +161,7 @@ def get_delta_i(self, subset):
 ```
 
 Here `subset` is the data in the entries of the dictionary given by `get_splits()`, so it's just the left side of the splits. To get the right side we take the whole data of the node and get rid of all the rows that are in the left split (`subset`).  
-So now we can get the best split by looping over all possible splits, ad returning the one with the highest value of $$\Delta i$$:
+So now we can get the best split by looping over all possible splits, ad returning the one with the highest value of \\(\Delta i\\):
 
 ```python
 def get_best_split(self):
@@ -269,7 +269,7 @@ def split(self):
     return
 ```
 
-Ok so it might seem like a long function but it is actually quite simple, We just keep splitting the data with the best possible split (maximizing $$\Delta i$$), and if one of our stop conditions is met we get the prediction that this node will make: the most frequent class in the node.
+Ok so it might seem like a long function but it is actually quite simple, We just keep splitting the data with the best possible split (maximizing \\(\Delta i\\)), and if one of our stop conditions is met we get the prediction that this node will make: the most frequent class in the node.
 
 All right we're done with the important bits, let's test our program out, and see what kind of trees we get, to be able to see what tree we have I blatantly ripped off <a></a>[this StackOverflow answer](https://stackoverflow.com/a/54074933/8650928) which gives us super nice trees! And I added a `value` property for my nodes where I put a string describing the split if the node is a split node, and the predicted class if the node is a leaf node.  
 and if we try out our code with the iris data we get:
@@ -311,6 +311,7 @@ Hey that tree looks super familiar, yay it's the exact same one than the in prev
 
 We get a tree that's one level deeper. So everything seems to be working fine. However in our iris dataset we only have numerical data, lengths and widths, so we don't really know if our tree building method works with categorical data. So to do this I'm going to use the golfing dataset which has a certain number of features, and the target value is if a game of golf is played or not. This dataset is very small so I can show you all of it here:
 
+{{<markdowntable>}}
 | id  | outlook  | temperature | humidity | windy | play |
 | --- | -------- | ----------- | -------- | ----- | ---- |
 | 1   | sunny    | 85          | 85       | FALSE | no   |
@@ -327,6 +328,7 @@ We get a tree that's one level deeper. So everything seems to be working fine. H
 | 12  | overcast | 72          | 90       | TRUE  | yes  |
 | 13  | overcast | 81          | 75       | FALSE | yes  |
 | 14  | rainy    | 71          | 91       | TRUE  | no   |
+{{</markdowntable>}}
 
 That's it, that's the whole dataset, but you see here we have a nice mix of categorical and numerical data. Ok so let's see how our CART implementation handles this:
 
@@ -349,5 +351,5 @@ That's it, that's the whole dataset, but you see here we have a nice mix of cate
 
 Yay everything works!
 
-You might have noticed that we only have classification trees in this example, and you'd be right. I haven't implemented the regression part yet because I'm too lazy but it would be exactly the same, but you would need to add an RSS function that you could plug in the `get_delta_i()` method and in the `split()` method, when a leaf node is reached set the prediction value to the mean of the dataset outcomes instead of the most frequent one. So I'll put it in eventually but I won't make a separate post on that. All of the code is on my <a></a>[github](https://github.com/zlanderous/CART-python) so you can play with it if you want.  
+You might have noticed that we only have classification trees in this example, and you'd be right. I haven't implemented the regression part yet because I'm too lazy but it would be exactly the same, but you would need to add an RSS function that you could plug in the `get_delta_i()` method and in the `split()` method, when a leaf node is reached set the prediction value to the mean of the dataset outcomes instead of the most frequent one. So I'll put it in eventually but I won't make a separate post on that. All of the code is on my <a></a>[github](https://github.com/lucblassel/CART-python) so you can play with it if you want.  
 One last thing, we haven't implemented the full CART algorithm because there is no pruning method to avoid overfitting, but this will come in a future part, so stay tuned!.
