@@ -1,9 +1,16 @@
 {{ define "main" }}
-    <h1>{{- .Title -}}</h1>
+    <div class="sm:container md:max-w-4xl mx-auto sm:p-12 p-10 post">
 
-    <br>
-    <div>
-        {{ .Content }}
+        <div class="text-2xl text-center font-bold">
+            {{- .Title -}}
+        </div>
+        <div class="flex mx-auto justify-center m-2">
+            {{ partial "metadata" . }}
+        </div>
+    
+        <br>
+        <div>
+            {{ .Content }}
+        </div>
     </div>
-
 {{ end }}

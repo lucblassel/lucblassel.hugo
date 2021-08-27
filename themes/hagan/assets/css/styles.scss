@@ -1,3 +1,70 @@
 @import "node_modules/tailwindcss/base";
 @import "node_modules/tailwindcss/components";
 @import "node_modules/tailwindcss/utilities";
+
+.post {
+  h1 {
+    @apply text-3xl font-bold pt-6;
+  }
+
+  h2 {
+    @apply text-2xl font-medium pt-4;
+  }
+
+  h3 {
+    @apply text-xl pt-3;
+  }
+
+  h4 {
+    @apply text-xl pt-3 font-light;
+  }
+
+  p {
+    @apply sm:my-4 my-10;
+  }
+
+  img {
+    @apply min-w-full max-w-lg;
+  }
+
+  .highlight {
+    @apply border-2 rounded-lg p-1;
+  }
+
+  pre {
+    @apply mx-auto max-w-xl overflow-x-scroll my-6 xl:max-w-full;
+  }
+
+  ul,
+  ol {
+    @apply mx-auto md:w-10/12 w-11/12;
+
+    li {
+      @apply my-2;
+    }
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  .markdown-table {
+    table {
+      @apply mx-auto table-auto border-collapse font-mono border max-w-xl overflow-x-scroll my-6 xl:max-w-full;
+
+      th,
+      td {
+        @apply text-center border p-1;
+      }
+    }
+  }
+
+  a {
+      @apply text-blue-500 font-medium;
+  }
+
+}

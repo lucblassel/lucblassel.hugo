@@ -4,7 +4,11 @@ module.exports = {
     },
     darkMode: 'media',
     variants: {},
-    plugins: [],
+    plugins: [
+      require('@tailwindcss/forms')({
+        strategy: 'class',
+      }),
+    ],
     purge: {
       enabled: true,
       content: ['./src/**/*.html'],

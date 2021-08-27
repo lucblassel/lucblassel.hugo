@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div class="sm:container md:max-w-4xl mx-auto sm:p-12 p-10">
+  <div class="text-2xl text-center font-bold m-6">Publications</div>
+  {{ $data := getJSON "https://vercel-serverless-phi.vercel.app/api/orcid" }}
+  {{ range $k, $v := $data}}
+  <div>
+
+    <div class="text-xl font-bold pb-2">{{ $v.title }}</div>
+
+    <div class="flex gap-4 text-lg">
+        <div>{{ time.Format "January 2006" $v.date }}</div>
+        {{ if $v.journal }}
+            <div class="italic">{{ $v.journal }}</div>
+        {{ end }}
+    </div>
+
+    <div class="flex sm:gap-2 gap-1 flex-wrap">
+        {{ range $ka, $author := $v.authors }}
+            <span class="flex-shrink-0">
+                {{ if $author.url }}
+                <a href="{{ $author.url }}" class="text-blue-500 hover:text-blue-700 hover:underline font-medium">
+                    {{ slicestr $author.first 0 1 }}. {{ $author.last }}
+                </a>
+                {{ else }}
+                    {{ slicestr $author.first 0 1 }}. {{ $author.last }}
+                {{ end }}
+                {{ if lt $ka (sub (len $v.authors) 2) }},{{ end }}
+            </span>
+            {{ if eq $ka (sub (len $v.authors) 2) }}<span>and</span>{{ end }}
+        {{ end }}
+    </div>
+
+    <div class="p-2">{{ $v.abstract | safeHTML | truncate 300}}</div>
+
+    <div class="flex justify-between">
+        <a href="https://doi.org/{{ $v.doi }}" class="text-blue-500 hover:text-blue-700 hover:underline font-medium my-auto">{{ $v.doi }}</a>
+        <a class="px-2 py-1 rounded-lg border border-gray-400 text-gray-400 my-auto hover:border-gray-800 hover:text-gray-800" href="https://doi.org/{{ $v.doi }}">
+            Read
+        </a>
+    </div>
+
+    {{ if lt $k (sub (len $data) 1) }}
+    <hr class="sm:m-8 m-5">
+    {{ end }}
+
+  </div>
+  {{ end }}
+</div>
+{{ end }}

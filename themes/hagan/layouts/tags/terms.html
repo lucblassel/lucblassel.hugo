@@ -1,0 +1,14 @@
+{{ define "main" }}
+    <div class="sm:container md:max-w-4xl mx-auto sm:p-12 p-10">
+        <h1 class="text-center text-3xl font-bold">{{ .Title }}</h1>
+        <div class="">
+            <ul class="list-disc">
+                {{ range .Pages }}
+                    <li class="text-xl leading-loose">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+{{ end }}

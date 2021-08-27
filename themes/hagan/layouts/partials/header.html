@@ -1,40 +1,13 @@
-<!-- <nav class="flex flex-col content-start justify-center md:justify-start w-full md:flex-row gap-4 mx-auto p-2 dark:md:bg-gray-700 dark:bg-gray-800">
-
-    <div class="text-3xl font-bold hover:text-gray-600 dark:hover:text-gray-300 p-2 md:my-auto">
-        <a href="/">LucBlassel.com</a>
-    </div>
-
-    <div class="flex flex-col md:flex-row md:space-evenly md:my-auto gap-2 md:gap-4">
-        {{ range .Site.Menus.main }}
-        <a class="link text-xl hover:text-gray-600 dark:hover:text-gray-300" href="{{ .URL }}">
-        {{ $text := print .Name | safeHTML }}
-        {{ $text }}
-        </a>
-        {{ end }}
-    </div>
-
-    <div class="md:text-xl md:flex-grow md:my-auto md:text-right">
-        <div class="md:flex gap-4 md:justify-end">
-            {{ range .Site.Menus.socials }}
-              <a class="text-gray-600 hover:text-gray-400 dark:hover:text-gray-300 dark:text-gray-50" href="{{ .URL }}">{{ .Pre }}</a>
-            {{ end }}
-        </div>
-    </div>
-</nav> -->
-
-<!-- This example requires Tailwind CSS v2.0+ -->
 <nav class="dark:bg-gray-800">
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex justify-between">
             <div class="flex space-x-7">
                 <div>
-                    <!-- Website Logo -->
                     <a href="/" class="flex items-center py-4 px-2">
-                        <!-- <img src="logo.png" alt="Logo" class="h-8 w-8 mr-2"> -->
                         <span class="font-semibold text-3xl hover:text-gray-600 dark:hover:text-gray-300">LucBlassel.com</span>
                     </a>
                 </div>
-                <!-- Primary Navbar items -->
+                <!-- Primary Navbar items (links) -->
                 <div class="hidden md:flex items-center space-x-4">
                     {{ range .Site.Menus.main}}
                     <a class="link text-xl hover:text-gray-600 dark:hover:text-gray-300" href="{{ .URL }}">
@@ -44,7 +17,7 @@
                     {{ end }}
                 </div>
             </div>
-            <!-- Secondary Navbar items -->
+            <!-- Secondary Navbar items (socials) -->
             <div class="hidden md:flex items-center space-x-4 ">
                 {{ range .Site.Menus.socials }}
                 <a class="text-gray-600 hover:text-gray-400 dark:hover:text-gray-300 dark:text-gray-50" href="{{ .URL }}">{{ .Pre }}</a>

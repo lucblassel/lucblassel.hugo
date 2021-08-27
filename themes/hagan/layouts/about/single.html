@@ -1,0 +1,98 @@
+{{ define "main" }}
+<div class="sm:container md:max-w-4xl mx-auto sm:p-12 p-10">
+  <div class="text-3xl text-center font-bold m-6">About</div>
+
+  <div>
+
+    <img class="mx-auto rounded-full md:p-10 p-5" src="https://s.gravatar.com/avatar/{{ .Site.Params.GravatarId }}?s=300">
+
+    <div class="p-5 post text-center">
+        {{ .Content }}
+    </div>
+
+    {{ $data := getJSON "https://gist.githubusercontent.com/lucblassel/38b5f9853cda68017cabe8d50b4eaf54/raw/7f7a1b09ba53f6e48cc5c5124f28fa6e60fa45cc/resume.json" }}
+
+    <div>
+        <div class="text-2xl font-bold my-3">Work</div>
+        {{ range $k, $v := $data.work }}
+            <div class="my-6">
+
+                <div class="flex gap-2">
+                    <span class="font-medium">{{ $v.position }}</span>
+                    <span class="font-light">@</span>
+                    <a href="{{ $v.url }}" class="text-blue-500 hover:text-blue-700 hover:underline font-medium">{{ $v.name }}</a>
+                </div>
+
+                <div class="flex justify-between">
+                    <span>{{ $v.location }}</span>
+                    <div>
+                        <span>{{ time.Format "January 2006" $v.startDate }}</span>
+                        <span>-</span>
+                        {{ if $v.endDate }}
+                            <span>{{ time.Format "January 2006" $v.endDate }}</span>
+                        {{ else }}
+                            <span>Now</span>
+                        {{ end }}
+                    </div>
+                </div>
+
+                <div class="my-2">
+                    {{ $v.summary }}
+                </div>
+
+                <div class="my-2">
+                    <a class="py-1 text-gray-400 my-auto hover:text-gray-800" href="{{ $v.url }}">
+                        More...
+                    </a>
+                </div>
+
+                {{ if lt $k (sub (len $data.work) 1) }}
+                <hr class="sm:m-4 m-2">
+                {{ end }}
+
+            </div>
+        {{ end }}
+    </div>
+
+    <div class="my-16">
+        <div class="text-2xl font-bold my-3">Education</div>
+        {{ range $k, $v := $data.education }}
+            <div class="my-6">
+
+                <div class="flex gap-2">
+                    <span class="font-medium">{{ $v.studyType }}</span>
+                    <span class="font-light">@</span>
+                    <a href="{{ $v.url }}" class="text-blue-500 hover:text-blue-700 hover:underline font-medium">{{ $v.institution }}</a>
+                </div>
+
+                <div class="flex justify-between">
+                    <span>{{ $v.location }}</span>
+                    <div>
+                        <span>{{ time.Format "January 2006" $v.startDate }}</span>
+                        <span>-</span>
+                        {{ if $v.endDate }}
+                            <span>{{ time.Format "January 2006" $v.endDate }}</span>
+                        {{ else }}
+                            <span>Now</span>
+                        {{ end }}
+                    </div>
+                </div>
+
+                <div class="my-2">
+                    <a class="py-1 text-gray-400 my-auto hover:text-gray-800" href="{{ $v.url }}">
+                        More...
+                    </a>
+                </div>
+
+                {{ if lt $k (sub (len $data.education) 1) }}
+                <hr class="sm:m-4 m-2">
+                {{ end }}
+
+            </div>
+        {{ end }}
+    </div>
+
+  </div>
+
+</div>
+{{ end }}

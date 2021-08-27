@@ -2,10 +2,11 @@
 <div class="h-screen flex">
     <div class="text-center md:m-auto mx-auto m-20 md:p-0">
         <h1 class="text-6xl font-extrabold">{{ .Site.Title }}</h1>
-        <img class="mx-auto rounded-full md:p-10 p-5" src="https://s.gravatar.com/avatar/d885cad4ccb230040b32a58d35a0dfda?s=400">
+        <img class="mx-auto rounded-full md:p-10 p-5" src="https://s.gravatar.com/avatar/{{ .Site.Params.GravatarId }}?s=400">
         <div class="w-full md:w-2/3 text-xl flex flex-col md:flex-row md:gap-5 flex-wrap m-auto justify-center font-bold">
-            <span>PhD. Student</span> <span>Computational Biology</span>
-            <span>Machine Learning</span>
+            {{ range .Site.Params.Keywords}}
+            <span>{{ . | title }}</span>
+            {{ end }}
         </div>
         <div class="flex flex-wrap">
             {{ range .Site.Menus.main }}
