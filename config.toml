@@ -11,9 +11,6 @@ theme = "hagan"
   getFormEndpoint = "https://getform.io/f/7b67ea7b-ca18-43b0-a2b5-c9b35b57581e"
   reCaptchaKey = "6Lf49iccAAAAAP2_whsMpa8hPKk-3Zy_BbiIx2_y"
 
-[build]
-  writeStats = true
-
 [markup]
   [markup.highlight]
     style = 'github'
