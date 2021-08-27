@@ -1,5 +1,5 @@
 [build]
-  command = "hugo --gc --verbose --verboseLog"
+  command = "hugo --gc --verbose --verboseLog --debug"
   publish = "public"
 
 [build.environment]
