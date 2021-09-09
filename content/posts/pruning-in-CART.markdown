@@ -1,11 +1,19 @@
 ---
 title: How does pruning work in CART ?
 excerpt_separator: <!--more-->
-tags: [decision-trees, machine-learning, Python, code]
 draft: true
 latex: true
 feature: https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
 latex: true
+tags:
+  - decision-trees
+  - machine-learning
+  - classification
+  - regression
+  - supervized
+  - code
+  - python
+  - algorithmic
 ---
 
 Ok so as we saw in previous parts, the CART algorithm allows us to build decision trees. Up till now we have built these trees until all leaves are pure, meaning they have only one class of examples (for classification trees), however this can lead to overfitting the training data which decreases the generalizability of our model, and therefore it's usefulness. This is where cost-complexity pruning comes into play.

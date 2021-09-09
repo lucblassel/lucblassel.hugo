@@ -2,9 +2,15 @@
 title: The CART Algorithm
 date: 2019-02-27 10:00:00
 excerpt_separator: <!--more-->
-tags: [decision-trees, machine-learning]
 feature: https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80
 latex: true
+tags:
+  - supervized
+  - decision-trees
+  - machine-learning
+  - classification
+  - regression
+  - algorithmic
 ---
 
 This is Part 2. of my decision tree series. Here we will see how we can build a decision tree algorithmically using Leo Breiman's (One of the big, **big** names in decision trees) CART algorithm.

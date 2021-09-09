@@ -5,6 +5,12 @@ feature: https://images.unsplash.com/photo-1515630278258-407f66498911?ixlib=rb-1
 excerpt_separator: <!--more-->
 author: Luc Blassel & Romain Gautron
 latex: true
+tags:
+ - machine-learning
+ - supervized
+ - python
+ - neural-networks
+ - classification
 ---
 
 
@@ -90,7 +96,7 @@ The algorithm, executes the following steps:
 It is easy to see that the generation of the network as well as the
 weights optimization occurs iteratively at each step of the algorithm.
 
-![adanet subnetwork choice](/images/schema_adanet.png)
+![adanet subnetwork choice](/images/adanet/schema_adanet.png)
 Both of the candidate networks generated at step \\(3\\) (red), one of
 them with a depth of \\(2\\) (a), like the previously selected sub-network
 (blue), and one of depth \\(3\\) that adds a depth level. Both of these

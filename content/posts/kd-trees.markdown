@@ -8,8 +8,11 @@ author: Luc Blassel & Romain Gautron
 tags:
   - classification
   - regression
+  - machine-learning
   - unsupervized
   - python
+  - code
+  - KNN
 ---
 
 This is a little writeup of a project I did in collaboration with a classmate while studying a algorithmic complexity class. We implemented a faster, but still exact, \\(k\\) nearest neighbors classifier based on k-d trees. I learned a lot and hope this can be interesting to some of you.

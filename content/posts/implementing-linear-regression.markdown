@@ -2,9 +2,16 @@
 title: Implementing linear regression, math and Python!
 date: 2020-01-09 10:00:00
 excerpt_separator: <!--more-->
-tags: [linear model, machine-learning, Python, code, regression]
 feature: https://upload.wikimedia.org/wikipedia/commons/e/ed/Residuals_for_Linear_Regression_Fit.png
 latex: true
+tags:
+  - code
+  - machine-learning
+  - python
+  - regression
+  - supervized
+  - linear-model
+  - algorithmic
 ---
 
 Today I want to explain linear regression. It is one of the simplest statistical learning models and can be implemented in only a couple lines of Python code, in an efficient manner. Being so simple however does not mean it is not useful, in fact it can be very practical to explore relationships between features in a dataset and make predictions on a target value. Therefore I think it's important to understand how the method works and how the different parameters have an effect on the outcome.
@@ -15,7 +22,7 @@ Today I want to explain linear regression. It is one of the simplest statistical
 
 Like it's name implies it is a regression method, therefore it learns a relationship between input features and a continuous numerical value, for example, given the number of rooms in an apartment and the crime rate in its neighborhood, guess the value of that apartment. The _linear_ means that the inferred relationship between features and target values is linear: the target value is equal to the sum of the feature values multiplied by coefficients. What the method learns is those coefficients in order to fit to the training data as closely as possible.
 
-### What does it mean in practice ?
+## What does it mean in practice ?
 
 Ok, let's start. Let's assume, for simplicity's sake, that we have only one feature \\(x\\) associated to a target value \\(y\\) that is equal to \\(2\cdot x\\) with noise added. If we plot this dataset we get this figure, with the red dotted line corresponding to the line of equation \\(y = 2\cdot x\\).
 
@@ -45,7 +52,7 @@ $$
 y = \theta_0 + \sum_{i=1}^{n} \theta_i\cdot x_i
 $$
 
-### How do we compute \\(\theta\\) values ?
+## How do we compute \\(\theta\\) values ? 
 
 Ok so first let's agree on some notation, we have:
 
@@ -112,7 +119,7 @@ $$
 $$
 {{</longmath>}}
 
-#### How do we use the gradient ?
+### How do we use the gradient ?
 
 Let's assume we have our gradient for \\(C\\) composed of all the \\(\frac{\delta C}{\delta \theta_j}\\). Let's imagine then that \\(\frac{\delta C}{\delta \theta_1} > 0\\), this means that our cost is increasing with \\(\theta_1\\), meaning that if we want to decrease \\(C\\) we must also decrease \\(\theta_1\\) by a certain amount. By doing this for all the \\(\theta_j\\) we can decrease \\(C\\) and if we repeat this step a large enough number of times we can converge to the minimal value of \\(C\\). We know that when we reach the minimum of \\(C\\), then the gradient value should all be equal to 0.
 
@@ -126,12 +133,12 @@ We then repeat these steps with the adjusted values for all the \\(\theta_j\\) u
 
 And that's it, this is the principle behind linear regression. However before starting the implementation there are a few things I need to explain still.
 
-#### How do we adjust \\(\theta\\) ?
+### How do we adjust \\(\theta\\) ?
 
 Just above I mentioned that if \\(\frac{\delta C}{\delta \theta_j} < 0\\) we need to increase \\(\theta_j\\), but by how much do we increase it?  
 The basic idea is that we subtract the partial derivative value from the current \\(\theta_j\\) value, therefore if the partial derivative is negative by subtracting a negative to \\(\theta_j\\) we increase it like we must. However in practice we multiply the partial derivative by a learning rate \\(\alpha\\) that we must choose before subtracting it. This learning rate will allow us to adjust how fast our regression "learns", it's choice is very important, if \\(\alpha\\) is too small we will barely change the \\(\theta\\) values and our regression will find the minimum very slowly, and inversely if \\(\alpha\\) is too big our cost will jump around everywhere and we might not find the minimum at all and our cost might actually increase as we adjust the \\(\theta\\) values. I'll come back to this later.
 
-#### Can we write the math in another way?
+### Can we write the math in another way?
 
 In this part I will show you how to write all the math in matrix form, because this will make the programming part a lot easier and more efficient to run _(This means that you have to know the matrix math basics to understand this)_.  
 As we said earlier we have our training examples \\(X\\), where each example \\(x^{(i)}\\) is a row and where each feature \\(x_j\\) is a column. Therefore if we have \\(m\\) examples and \\(n\\) features, then \\(X\\) is an \\(m\times n\\) matrix. We also have our vector of target values \\(y\\) which is an \\(m\times 1\\) vector. If you recall earlier we had our predicted value for \\(x^{(i)}\\):
@@ -204,7 +211,7 @@ Ok so I guess we can start getting into the implementation part of this post. I'
 
 # How can we implement linear regression ?
 
-### Getting a dataset
+## Getting a dataset
 
 Ok so first things first we need some data on which to train our linear regressor, I'm going to stick to basics an use the <a></a>[boston housing dataset](https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html), where we try to guess the median monetary value of different homes depending on several features like the number of rooms, crime rate, distance to the nearest job center, etc...  
 This dataset is available in the `scikit-learn` library in Python and we are going to split it into a training dataset with \\(80\%\\) of the examples and keep the remaining \\(20\%\\) as a testing set on which we can evaluate the performance of our linear regressor. I wrote a small dataset splitting function, and loaded the data.
@@ -269,7 +276,7 @@ X_test_norm = np.append(
   np.ones((len(X_test_norm), 1)), X_test_norm, axis=1)
 ```
 
-### Building our regressor
+## Building our regressor
 
 Now we can get to the actual regression part. First we need to be able to compute our cost, note that in Python the matrix multiplication symbol is `@`, and the `**2` means we square the matrix element-wise.
 
@@ -296,7 +303,7 @@ def gradient_descent(X, y, theta, alpha, max_iters):
     return theta, history
 ```
 
-### How do we choose the learning rate ?
+## How do we choose the learning rate ?
 
 Here I am just going to try a couple different \\(\alpha\\) values and check the learning curves for each of these alpha values. With small values, like \\(\alpha=0.001\\) you can see that the cost decreases so we are converging but it takes a very long time, but as \\(\alpha\\) gets bigger the cost decreases faster and faster.
 
@@ -308,7 +315,7 @@ But we have to be careful, if we choose an \\(\alpha\\) value that's too big it 
 
 So after looking at these graphs we can choose the right value \\(\alpha = 0.1\\) which will give us the fastest convergence time.
 
-### training our regressor
+## training our regressor
 
 So now we can actually train our linear regression and then measure it's performance on our test data set. First we need initial \\(\theta\\) values, so we are just going to set them all equal to zero.
 
