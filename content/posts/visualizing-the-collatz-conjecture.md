@@ -1,9 +1,7 @@
 ---
 title: "Visualizing the Collatz Conjecture"
 date: 2021-09-03T18:17:02+02:00
-draft: true
 latex: true
-zooms: true
 ---
 
 # What is the Collatz conjecture ?
@@ -33,7 +31,7 @@ The [collatz conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture) is th
 
 # visualizing the conjecture
 
-I'm not the first to tackle this, far from it, I drew inspiration from a lot of sources *([numberphile](), [the coding train]() and wikipedia mainly)*, and if you serach google for visualizations you will find many more, however I still think it's an interesting problem to try and recreate a visualization. 
+I'm not the first to tackle this, far from it, I drew inspiration from a lot of sources *([numberphile](https://www.youtube.com/watch?v=LqKpkdRRLZw), [the coding train](https://thecodingtrain.com/challenges/coding-in-the-cabana/002-collatz-conjecture.html) and wikipedia mainly)*, and if you serach google for visualizations you will find many more, however I still think it's an interesting problem to try and recreate a visualization. 
 
 ## Computing the terms
 
@@ -153,30 +151,111 @@ So our memoized function is about an order of magnitude faster than the unmemoiz
 
 ## Visualization
 
-Finally, with the coding out of the way we can start visualizing the behavior of our sequences. 
+Finally, with the coding out of the way we can start visualizing the behavior of our sequences. There are many ways to try and visualize this conjecture, here are a couple:
 
-### Simple
-![maxes](/images/collatz/simple/collatz_maxes.svg)
-![points](/images/collatz/simple/collatz_points.svg)
+### Sequence paths
+An intuitive way to try and visualize this is to choose a starting number and plot the trajectory of the sequence. So along the x axis we plot the steps of the sequence and on the y axis the value of this step in the sequence. if we choose a starting number of 10 we get the collatz sequence of `[10, 5, 16, 8, 4, 2, 1]`, which gives us the following plot: 
+
+![path 10](/images/collatz/simple/path_10.svg)
+
+Now for some starting values (not necessarily very far from 10) we can get a very different behaviour. For example if we take 27 as a starting number, the sequences takes a lot longer to converge to 1, precisely 112 steps, and it reaches a maximum value of 9232!
+
+![path 27](/images/collatz/simple/path_27.svg)
+
+Another thing we can do is try and plot several of these trajectories on a single plot. For example on the following plot I have put the trajectories of the first 20 natural integers. The color corresponds to the starting number, varying from black (for 1) to yellow (for 20). So the darker the line is the smaller the starting number. 
+
+![paths 20](/images/collatz/simple/paths_20.svg)
+
+If we bump that number up to 100 we get some interesting patterns, although it is a little messy due to the scale of certain sequences: 
+
+![paths 100](/images/collatz/simple/paths_100.svg)
+
+### Path caracteristics
+
+Another thing we can plot instead of the sequence paths themselves is some characteristic about the sequence. If we look at the [wikipedia article](https://en.wikipedia.org/wiki/Collatz_conjecture), some of these plots are also shown.  
+For example, if we plot the length of the sequence on the y axis versus the starting number on the x axis we get the following graph. Some interseting patterns emerge, with clusters of starting numbers that have the same sequence length. 
+
+![points](/images/collatz/simple/path_lengths_10_000.svg)
+
+
+We can also plot the highest number reached in the sequence versus the starting number *(we clip the y-axis otherwise the extremely high values introduce a lot of blank space)*. Here again we can see som e interesting patterns emerging with horizontal lines and oblique lines appearing. 
+
+![maxes](/images/collatz/simple/maxes_10_000.svg)
 
 ### Graph
-![101](/images/collatz/graph/collatz.101.png)
-![digraph](/images/collatz/graph/collatz_1000.digraph.png)
-![leveled](/images/collatz/graph/collatz_1000.digraph.leveled.png)
+
+Another visualization that I wanted to replicate was a directed graph shown on the wikipedia page. The idea is that each node of the graph represents a number of a sequence. Each node points to the next node in the sequence. In order to make it a little more legible, the nodes that appear at the same step in sequences are constrained to the same level. Nodes that are starting numbers are colored according to their distance to 1 in number of steps.  
+We can generate a `dot language` graph with python and render it with `dot` for all the starting numbers up to 20:  
+
+![20](/images/collatz/graph/graph_20.png)
+
+
+We can push it a little further by representing the graph for all starting numbers from 1 to 1000 *(which is the graph that is present on the wikipedia page.)*  
+
+![1000](/images/collatz/graph/graph_1000.png)
+
+
+Finally I wanted to see what a "looser" graph would look like, that is to say I stopped constraining all the nodes at the same step number to be on the same level and rendered the resulting graph with `neato` instead of `dot`. I kept the colors though. This resulted in a much more natural looking graph, almost like some type of sea-weed.  
+
+![unorganized](/images/collatz/graph/graph_1000_unorganized.svg)
 
 ### Arc graphs
+
+Inspired by [this post](https://hbfs.wordpress.com/2010/04/27/the-large-hideous-collatzer/) I decided to try and represent the collatz conjecture as an arc graph. To do this I plot all the starting numbers up to \\(k\\) as a points on a straight line. For each number, if the next collatz number is bigger, I draw a semi-cirle linking the 2 points on top of the number line, and if the next number is lower I draw the semi circle below the number line. If the next number is higher than the number \\(k\\) we chose, then I draw the corresponding semi-circle in gray and let it get cropped.  
+
+If we do this representation for \\(k=10\\), we get the following graph, where each dot represents the numbers from 1 to 10 (from left to right). 
+
 ![10](/images/collatz/arcs/collatz_arc_10.png)
+
+As we grow the number of starting points we see the same structure repeating, here for \\(k=20\\):  
 ![20](/images/collatz/arcs/collatz_arc_20.png)
+
+And here for \\(k=50\\):  
+
 ![50](/images/collatz/arcs/collatz_arc_50.png)
-![100](/images/collatz/arcs/collatz_arc_100.png)
-![500](/images/collatz/arcs/collatz_arc_500.png)
 
-### Coral
+The code for these representations are available in [this repo](https://github.com/lucblassel/website_projects/tree/master/collatz) if you want to play with them. The path graphs and directed graphs were generated with python. The arc graph were generated using [python processing](https://py.processing.org/). 
+### Coral representation
 
+This is the type og visualization I wanter to create when I started this post. I had seen a [numberphile video](https://www.youtube.com/watch?v=LqKpkdRRLZw) about this representation and I set out to recreate it. The original representation if from mathematician [Edmund Harris](https://maxwelldemon.com/)  
+
+The process is quite simple, for each sequence you generate a line. This line advances a fixed amount for each step of the sequence. If the number if even, we rotate a certain way before advancing, and if the number is odd rotate the other way. If you plot several paths corresponding to several starting numbers on the same image, you get tendrils that I personally think look like coral. 
+
+In this particular case, I used [p5.js](https://p5js.org/) to generate the following figures. The way I did it was starting each sequence from the starting number, then if the number if even rotate clockwise by 0.3 radians, if the number is odd rotate counterclockwise by half that amount.  
+
+Using this visualization, by setting the background black, and drawing each path with some transparency, we can see where the sequences overlap. Here is the figure generated for the first 10,000 natural integers.  
 ![simple coral](/images/collatz/coral/collatz_10_000_coral.png)
+
+Once we have this basic model it's easy to play a bit. For example here each time I draw a path, I select a random hue and draw the same figure.  
 ![coral with hues](/images/collatz/coral/collatz_10_000_hues_coral.png)
-![coral with random angles](/images/collatz/coral/collatz_10_000_random_angles_coral.png)
-![reds with random angles](/images/collatz/coral/collatz_10_000_random_reds_angles_coral.png)
+
+We can restrict the hues to a tighter range, for example only shades of red:  
 ![reds](/images/collatz/coral/collatz_10_000_reds_coral.png)
 ![reds transparent](/images/collatz/coral/collatz_10_000_reds_transparent_coral.png)
+
+We can also play with the angles a little bit, for example here, for each sequence I draw, I select a random angle between 0.01 and 0.5 radian. 
+![coral with random angles](/images/collatz/coral/collatz_10_000_random_angles_coral.png)
+
+You can also combine that with colors. 
+![reds with random angles](/images/collatz/coral/collatz_10_000_random_reds_angles_coral.png)
+
+Finally I also generated the simple visualization, white paths, for the first 100,000 natural integers. This gives us a much more dense
 ![transparent 100k](/images/collatz/coral/collatz_100_000_transparent_coral.png)
+
+*This skecth is available [here](https://editor.p5js.org/lucblassel/sketches/8lqSzijkm) if you want to play with it!*  
+
+### Edmund Harris visualization
+
+I was quite happy with these drawings but you migh have noticed they are not really exaclty the same as in the numberphile video. I did a little more digging and realized that there were 2 key differences:
+ 1. The collatz sequences used was the ["shortcut sequence"](https://en.wikipedia.org/wiki/Collatz_conjecture#Statement_of_the_problem), where instead of taking \\(3\cdot n = 1\\) when the number is odd, we take \\((3\cdot n + 1)/2\\) since we know that \\(3\cdot n + 1\\) is even. 
+ 2. Instead of drawing the sequence from the starting number, each line starts with the number 1. And you go backwards in the collatz sequence. If the next number is double the current one, turn clockwise a certain amount, otherwise turn half that amount counter-clockwise. 
+
+With these 2 simple changes we can finally get the representation I really wanted for the first 10,000 starting numbers:   
+
+![harris reds](/images/collatz/harris/10000_reds.png)
+
+*Once again, the sketch is availbale [here](https://editor.p5js.org/lucblassel/sketches/ftfHIpIGQ) if you want to play with it!*
+
+# Final thoughts
+To be honest I had quite some fun trying to recreate these visualization and I encourage you to do the same. It is however quite hard to come up with original ways of looking at this problem visually. I might come back to it later and update this if I ever do.  
+In the meantime I hope you enjoyed this article and I'm off to print a large version of that last one for my wall :) !
