@@ -231,16 +231,16 @@ Once we have this basic model it's easy to play a bit. For example here each tim
 
 We can restrict the hues to a tighter range, for example only shades of red:  
 ![reds](/images/collatz/coral/collatz_10_000_reds_coral.png)
-![reds transparent](/images/collatz/coral/collatz_10_000_reds_transparent_coral.png)
+![reds transparent](/images/collatz/coral/collatz_10_000_reds_backed_coral.png)
 
 We can also play with the angles a little bit, for example here, for each sequence I draw, I select a random angle between 0.01 and 0.5 radian. 
 ![coral with random angles](/images/collatz/coral/collatz_10_000_random_angles_coral.png)
 
 You can also combine that with colors. 
-![reds with random angles](/images/collatz/coral/collatz_10_000_random_reds_angles_coral.png)
+![reds with random angles](/images/collatz/coral/collatz_10_000_random_reds_angles_coral_backed.png)
 
 Finally I also generated the simple visualization, white paths, for the first 100,000 natural integers. This gives us a much more dense
-![transparent 100k](/images/collatz/coral/collatz_100_000_transparent_coral.png)
+![100k](/images/collatz/coral/collatz_100_000_backed_coral.png)
 
 *This skecth is available [here](https://editor.p5js.org/lucblassel/sketches/8lqSzijkm) if you want to play with it!*  
 
@@ -252,7 +252,7 @@ I was quite happy with these drawings but you migh have noticed they are not rea
 
 With these 2 simple changes we can finally get the representation I really wanted for the first 10,000 starting numbers:   
 
-![harris reds](/images/collatz/harris/10000_reds.png)
+![harris reds](/images/collatz/harris/10000_reds_backed.png)
 
 *Once again, the sketch is availbale [here](https://editor.p5js.org/lucblassel/sketches/ftfHIpIGQ) if you want to play with it!*
 

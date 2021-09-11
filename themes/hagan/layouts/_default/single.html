@@ -12,5 +12,12 @@
         <div>
             {{ .Content }}
         </div>
+
+        {{ if eq .Page.Type "posts" }}
+        <div class="my-24">
+            {{ partial "comments.html" }}
+            {{ partial "zoom.html" }}
+        </div>
+        {{ end }}
     </div>
 {{ end }}
