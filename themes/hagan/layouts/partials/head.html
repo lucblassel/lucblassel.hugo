@@ -30,9 +30,6 @@
   {{/* FontAwesome */}}
   <script defer src="https://kit.fontawesome.com/1c4834cc82.js" crossorigin="anonymous"></script>
 
-  {{/* reCAPTCHA */}}
-  <script src="https://www.google.com/recaptcha/api.js?render={{ .Site.Params.reCaptchaKey }}"></script>
-
   {{/* Math rendering */}}
   {{ if .Params.latex }} {{ partial "math.html" . }}{{ end }}
 

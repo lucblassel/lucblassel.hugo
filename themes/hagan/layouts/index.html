@@ -2,7 +2,7 @@
 <div class="flex">
     <div class="text-center md:m-auto mx-auto m-10 md:p-0">
         <h1 class="text-6xl font-extrabold">{{ .Site.Title }}</h1>
-        <img class="mx-auto rounded-full md:p-10 p-5" src="https://s.gravatar.com/avatar/{{ .Site.Params.GravatarId }}?s=400">
+        <img class="mx-auto rounded-full md:p-10 p-5" width=400 height=400 src="https://s.gravatar.com/avatar/{{ .Site.Params.GravatarId }}?s=400" alt="my profile picture">
         <div class="w-full md:w-2/3 text-xl flex flex-col md:flex-row md:gap-5 flex-wrap m-auto justify-center font-bold">
             {{ range .Site.Params.Keywords}}
             <span>{{ . | title }}</span>
@@ -12,7 +12,7 @@
         <div class="grid sm:grid-cols-2 grid-cols-1 gap-6 grid-flow-row m-24">
             {{ range .Site.Menus.main }}
                 <div class="icon-container px-2 py-2">
-                    <a href="{{ .URL }}" class="w-full h-full">
+                    <a href="{{ .URL }}" class="w-full h-full" aria-label="{{ .Name }}-link">
                         <div class="text-4xl">{{ .Pre }}</div>
                         <b class="text-4xl sm:text-2xl">{{ .Name }}</b>
                     </a>
@@ -24,7 +24,7 @@
             <h1 class="text-2xl">Find me on the internet</h1>
             <div class="flex gap-5 md:gap-7 justify-center mx-auto my-5">
                 {{ range .Site.Menus.socials}}
-                <a class="text-2xl md:text-3xl hover:text-gray-400 dark:hover:text-gray-300 dark:text-gray-50" href="{{ .URL }}">{{ .Pre }}</a>
+                <a class="text-2xl md:text-3xl hover:text-gray-400 dark:hover:text-gray-300 dark:text-gray-50" href="{{ .URL }}" aria-label="{{ .Name }}-link">{{ .Pre }}</a>
                 {{ end }}
             </div>
         </div>

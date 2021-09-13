@@ -96,7 +96,8 @@
   </div>
 </div>
 
-<script>
+<script defer src="https://www.google.com/recaptcha/api.js?render={{ .Site.Params.reCaptchaKey }}"></script>
+<script defer>
     grecaptcha.ready(function() {
         grecaptcha.execute('{{ .Site.Params.ReCaptchaKey }}', {action: 'homepage'})
         .then(function(token) {
