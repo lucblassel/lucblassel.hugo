@@ -1,4 +1,4 @@
-baseURL = "https://awesome-rosalind-68f1b3.netlify.app/"
+baseURL = "https://lucblassel.com"
 languageCode = "en-us"
 title = "Luc Blassel"
 copyright = "Luc Blassel"
@@ -10,6 +10,7 @@ theme = "hagan"
   gravatarId = "d885cad4ccb230040b32a58d35a0dfda"
   getFormEndpoint = "https://getform.io/f/7b67ea7b-ca18-43b0-a2b5-c9b35b57581e"
   reCaptchaKey = "6Lf49iccAAAAAP2_whsMpa8hPKk-3Zy_BbiIx2_y"
+  fontAwesomeKit = "1c4834cc82"
 
 [markup]
   [markup.highlight]
