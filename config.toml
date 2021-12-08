@@ -13,10 +13,14 @@ theme = "hagan"
   fontAwesomeKit = "1c4834cc82"
 
 [markup]
+  defaultMarkdownHandler = 'goldmark'
   [markup.highlight]
     style = 'github'
     lineNos = true
     lineNumbersInTable = true
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      footnote = true
 
 [menu]
 

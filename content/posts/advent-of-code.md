@@ -219,7 +219,7 @@ $$
 $$
 {{</longmath>}}
 
-Now we can assume that R divided by n is probably small if the dataset is well distributed. So our optimal value will be close to the mean of our crab positions: 
+Now we can assume that R divided by n is probably small if the dataset is well distributed [^1]. So our optimal value will be close to the mean of our crab positions: 
 
 $$
 \theta^* \approx \frac{1}{n}\sum_{i=1}^n x_i
@@ -247,3 +247,16 @@ This will allow us to find the optimal point much more efficiently!
 # Parting words
 I hope you understood the approach I took and if you are interested in my progress on advent of code 2021 you can check out my [github repo](https://github.com/lucblassel/AoC_2021/) for my python solutions (while I can solve the problems :p).  
 Thanks for reading and if you notice any mistakes in my reasonning please don't hesitate to point them out to me!
+
+[^1]: **N.B**: as pointed out [here](https://twitter.com/ArthurCarcano/status/1468360563713576964?s=20) the value of \\(R\\) is actually bounded:  
+Since all \\(x_i\\) and \\(\theta\\) values are positive: \\( 0 \leq card(\{x_i\\leq\theta\}) \leq n \\) and \\( 0 \leq card(\{x_i>\theta\}) \leq n \\). Therefore:  
+{{<longmath>}}
+$$
+\begin{gather}
+                -n \leq \sum_{x_o\leq\theta}1 - \sum_{x_o>\theta}1 \leq n \\
+\Leftrightarrow \frac{-n}{2} \leq R \leq \frac{n}{2} \\
+\Leftrightarrow \frac{-1}{2} \leq \frac{R}{n} \leq \frac{1}{2} \\
+\end{gather}
+$$
+{{</longmath>}}
+This means that at most the optimum will be \\(1/2\\) off of the mean, therefore the integer optimum must be at the integer mean \\(\pm 1\\).
