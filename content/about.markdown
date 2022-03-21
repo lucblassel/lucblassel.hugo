@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "About Me  🙋‍♂️"
 date: 2021-08-17T18:42:03+02:00
 type: about
 comments: false
