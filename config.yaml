@@ -1,10 +1,9 @@
 baseURL: https://lucblassel.com
 languageCode: en-us
 title: Luc Blassel
-copyright: Luc Blassel
 theme: PaperMod
 env: production
-copyright: © Luc Blassel 2021,  
+copyright: © Luc Blassel 2021,
 outputs:
   home:
     - JSON
@@ -12,8 +11,6 @@ outputs:
     - HTML
 params:
   owner: Luc Blassel
-  # assets:
-  #   disableHLJS: true
   keywords:
     - PhD. Student
     - Computational Biology
@@ -22,7 +19,6 @@ params:
   getFormEndpoint: https://getform.io/f/7b67ea7b-ca18-43b0-a2b5-c9b35b57581e
   reCaptchaKey: 6Lf49iccAAAAAP2_whsMpa8hPKk-3Zy_BbiIx2_y
   fontAwesomeKit: 1c4834cc82
-  # ShowShareButtons: true
   disableSpecial1stPost: true
   ShowReadingTime: true
   ShowToc: true
@@ -30,9 +26,9 @@ params:
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   comments: true
-  homeInfoParams: 
+  homeInfoParams:
     Title: LucBlassel.com
-    Content:  "Hi there! <div style='border-radius: 100%;'>![This is me](https://s.gravatar.com/avatar/d885cad4ccb230040b32a58d35a0dfda?s=400)</div>"
+    Content: "Hi there! <div style='border-radius: 100%;'>![This is me](https://s.gravatar.com/avatar/d885cad4ccb230040b32a58d35a0dfda?s=400)</div>"
   profileMode:
     enabled: true
     title: LucBlassel.com
@@ -66,10 +62,6 @@ params:
       url: https://twitter.com/lucblassel
 markup:
   defaultMarkdownHandler: goldmark
-  # highlight:
-  #   style: github
-  #   lineNos: false
-  #   lineNumbersInTable: true
   goldmark:
     extensions:
       footnote: true
@@ -78,38 +70,12 @@ menu:
     - name: Posts
       url: /posts/
       weight: 2
-      pre: <i class="fas fa-clipboard-list"></i>
     - name: About
       url: /about/
       weight: 3
-      pre: <i class="fas fa-address-card"></i>
     - name: Publications
       url: /publications/
       weight: 4
-      pre: <i class="far fa-newspaper"></i>
     - name: Tags
       url: /tags/
       weight: 5
-      pre: <i class="fas fa-tags"></i>
-  socials:
-    - name: Github
-      url: https://github.com/lucblassel
-      pre: <i class="fab fa-github"></i>
-    - name: Pasteur
-      url: https://research.pasteur.fr/en/member/luc-blassel/
-      pre: <i class="fas fa-briefcase"></i>
-    - name: LinkedIn
-      url: https://www.linkedin.com/in/luc-blassel/
-      pre: <i class="fab fa-linkedin"></i>
-    - name: ORCID
-      url: https://orcid.org/0000-0002-6598-7673
-      pre: <i class="fab fa-orcid"></i>
-    - name: Google Scholar
-      url: https://scholar.google.fr/citations?user=RYs6rFwAAAAJ&hl=en&oi=ao
-      pre: <i class="fas fa-graduation-cap"></i>
-    - name: Twitter
-      url: https://twitter.com/lucblassel
-      pre: <i class="fab fa-twitter"></i>
-    - name: Contact me
-      url: /contact/
-      pre: <i class="fas fa-envelope"></i>
