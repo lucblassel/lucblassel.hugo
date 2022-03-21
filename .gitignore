@@ -167,3 +167,5 @@ dist
 .vscode/
 .vercel
 .output
+
+.hugo_build.lock
