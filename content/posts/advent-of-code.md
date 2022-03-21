@@ -88,7 +88,7 @@ First let's define some terms:
  - I will call \\(n\\) the number of crabs
  - \\(x_i\\) is the horizonal position of the \\(i^{th}\\) crab. So in our example above \\(x_0=16\\) and \\(x_1=1\\).
  - \\(\theta\\) is the x-position at which we want the crabs to align
- - \\(\theta^*\\) is the optimal value of \\(\theta\\), so in our example above \\(\theta^*=2\\)
+ - \\(\theta^\*\\) is the optimal value of \\(\theta\\), so in our example above \\(\theta^*=2\\)
  - \\(C(\theta)\\) is the cost function *(i.e the amount of fuel used)* for a given value of \\(\theta\\). In our example above \\(C(2) = 37\\).
 
 The first step in any optimization function is to define the cost function. In our case it's quite simple, our cost is the sum of all the absolute differences between each crab and the chosen value of \\(\theta\\):
