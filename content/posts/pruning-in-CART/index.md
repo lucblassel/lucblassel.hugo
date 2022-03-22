@@ -31,25 +31,25 @@ In order to explain cost-complexity pruning, we are going to need to give some n
 
 ## Tree nomenclature
 
-Let us consider a decision tree $T$ and two of its nodes, $t$ and $t'$.
+Let us consider a decision tree \\(T\\) and two of its nodes, \\(t\\) and \\(t'\\).
 
-- $t'$ is a **descendant** of $t$ if there is a path **down** _(from the root to the leaves)_ the tree from $t$ to $t'$.
-- $t$ is an **ancestor** of $t'$ if there is a path **up** _(from the leaves to the root)_ from $t'$ to $t$.
-- $t_R$ and $t_L$ are, respectively, the right and left child nodes of $t$
-- A **branch** $T_t$ is the branch of $T$ with root $t$, is composed of the node $t$ and all of its descendants.
-- **pruning** a branch $T_t$ from $T$ is removing all nodes of $T_t$ from $T$, the **pruned tree** is called $T-T_t$
-- If you can get a tree $T'$ from $T$ by pruning branches, the $T'$ is a **pruned subtree** of $T$ and we denote that with: $ T' \leq T$
-- For a given tree $T$, we can define, the **set of leaf nodes** $\widetilde{T}$
-- The **complexity** of $T$ is given by the cardinality of $\widetilde{T}$, _(ie. the number of leaf nodes)_, it is noted: $\vert\widetilde{T}\vert$
+- \\(t'\\) is a **descendant** of \\(t\\) if there is a path **down** _(from the root to the leaves)_ the tree from \\(t\\) to \\(t'\\).
+- \\(t\\) is an **ancestor** of \\(t'\\) if there is a path **up** _(from the leaves to the root)_ from \\(t'\\) to \\(t\\).
+- \\(t_R\\) and \\(t_L\\) are, respectively, the right and left child nodes of \\(t\\)
+- A **branch** \\(T_t\\) is the branch of \\(T\\) with root \\(t\\), is composed of the node \\(t\\) and all of its descendants.
+- **pruning** a branch \\(T_t\\) from \\(T\\) is removing all nodes of \\(T_t\\) from \\(T\\), the **pruned tree** is called \\(T-T_t\\)
+- If you can get a tree \\(T'\\) from \\(T\\) by pruning branches, the \\(T'\\) is a **pruned subtree** of \\(T\\) and we denote that with: \\( T' \leq T\\)
+- For a given tree \\(T\\), we can define, the **set of leaf nodes** \\(\widetilde{T}\\)
+- The **complexity** of \\(T\\) is given by the cardinality of \\(\widetilde{T}\\), _(ie. the number of leaf nodes)_, it is noted: \\(\vert\widetilde{T}\vert\\)
 
 ## Measures
 
-Let us consider a leaf node $t$ of $T$, with $\kappa(t)$ the class of $t$ _(ie the majority class in the node)_.
+Let us consider a leaf node \\(t\\) of \\(T\\), with \\(\kappa(t)\\) the class of \\(t\\) _(ie the majority class in the node)_.
 
-- $r(t) = 1 - p(\kappa(t)\vert t)$ the is the **resubstitution error estimate** of $t$. $p(\kappa(t)\vert t)$ is the proportion of the majority class in $t$.
-- We denote $R(t) = p(t)\cdot r(t)$, with $p(t)$ simply being the proportion of samples in node $t$ compared to the rest of the tree.
-- It is provable that $R(t) \geq R(t_R) + R(t_L)$, which just means that if we split a node the misclassification rate is sure to improve.
-- The overall **missclassification rate** for $T$, is:
+- \\(r(t) = 1 - p(\kappa(t)\vert t)\\) the is the **resubstitution error estimate** of \\(t\\). \\(p(\kappa(t)\vert t)\\) is the proportion of the majority class in \\(t\\).
+- We denote \\(R(t) = p(t)\cdot r(t)\\), with \\(p(t)\\) simply being the proportion of samples in node \\(t\\) compared to the rest of the tree.
+- It is provable that \\(R(t) \geq R(t_R) + R(t_L)\\), which just means that if we split a node the misclassification rate is sure to improve.
+- The overall **missclassification rate** for \\(T\\), is:
 
 $$
 R(T) = \sum_{t\in \widetilde{T}} R(t) = \sum_{t\in \widetilde{T}} r(t)\cdot p(t)
@@ -59,6 +59,6 @@ Which is to say the sum of the resubstitution error of a leaf node multiplied by
 
 # The pruning
 
-The first step in pruning a tree is, ..., you guessed it: having a tree. So we start by growing $T_{max}$ the maximal tree, with pure leaves. Now the naive approach would be to go through all the possible pruned subtrees and see which one has the best trade-off between performance and complexity, however that is, in practice, impossible because of the huge number of possible pruned subtrees.
+The first step in pruning a tree is, ..., you guessed it: having a tree. So we start by growing \\(T_{max}\\) the maximal tree, with pure leaves. Now the naive approach would be to go through all the possible pruned subtrees and see which one has the best trade-off between performance and complexity, however that is, in practice, impossible because of the huge number of possible pruned subtrees.
 
 This is a test of how the **_git_** thing works

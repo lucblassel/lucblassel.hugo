@@ -33,7 +33,7 @@ As I said above, when the number of feature grows or if you let the model train 
 
 If we take the following image *(taken from [wikipedia](https://en.wikipedia.org/wiki/Regularization_(mathematics)))* as example, the green curve represents the undelying data generating function, essentially what we want our model to learn, any unseen points that we want our model to predict will fall on that line. The red points represent training examples from this function. The blue line represents the function our model has learned. As we can see, both cuvres meet in the training examples, this means that the blue function will have a training loss of 0, which is great! however it is absolutely useless for predicting new points from the green curve. 
 
-![Regularization](Regularization.svg)
+![Regularization](Regularization.svg#center)
 
 In the linear model, this overfitting often manifests by the model learning very large weights in order to get a loss of 0. By adding the value of these weights in the cost function, the gradient descent algorithm will try to keep the weight values as small as possible, which means the model will be "smoother" and that usually leads to more generalizable models.
 

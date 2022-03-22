@@ -37,7 +37,7 @@ So let's look at a small subset of our data:
 
 A tree built _(more commonly we say trained instead of built)_ on this subset (which we call the **training** or **learning** set), can look something like this:  
 <a id='simple-tree'> <a/>
-![a simple decision tree](simple_tree.svg)
+![a simple decision tree](simple_tree.svg#center)
 
 Where the data is split in 2 at each node according to a condition on a feature, for example: _is the petal length lower or equal to 1.7cm?_.  
 _(NB. we restrict ourselves to binary decision trees, meaning a node only splits into 2 subnodes, there are decision trees that are non-binary but they are not commonly used)_  
@@ -62,11 +62,11 @@ Now we can draw our second split, the horizontal line representing \\(petal\ wid
 _Why don't we keep partitioning until there are no stragglers ?_ you might ask.  
 To understand that let's take a look at what the tree would look like if we kept splitting the dataset until each subspace was only filled with one species:
 
-![an overfitted tree](overfitted_tree.svg)
+![an overfitted tree](overfitted_tree.svg#center)
 
 As you can see this tree is a lot bigger and more complicated to take in, and it has splits that are very close to one another like \\(petal\ length = 4.9\\) and \\(petal\ length = 4.8\\)
 
-![overfitted partitioning](iris_splits_overfit.svg)
+![overfitted partitioning](iris_splits_overfit.svg#center)
 
 _(N.b, you might have noticed in middle-top partition there appears to be only a sample of Virginica, so why was is separated from the middle-right partition which is also Virginica? In reality, because of the low precision of the dataset measurements, there are 2 Versicolor and 1 Virginica that have the same values for petal length and width, making them indistinguishable in the plane)_
 
@@ -87,7 +87,7 @@ To be able to answer that question we need to know how we use a decision tree to
 
 I've represented the decision paths (how the sample goes through the tree) of the first 3 samples with colors.
 
-![decision paths in the simple tree](decision_paths.svg)
+![decision paths in the simple tree](decision_paths.svg#center)
 
 So for sample 2 _(the Versicolor)_ the petal length is \\(> 1.9\\) so it goes right at the first node, the petal width is \\(\leq 1.7\\) so it goes left at the second node and is correctly classified as Vversicolor_. The same goes for samples 1 and 3. Let's take our fourth sample now, its petal length is \\(5.8\\) which is \\(>1.9\\) so it goes right at the first split, until now everything is OK, however its petal width is \\(1.6\\) which is \\(\leq 1.7\\), so it will go left at the second split and be detected as _Versicolor_ even though it is a _Virginica_, so our tree made a mistake.  
 
