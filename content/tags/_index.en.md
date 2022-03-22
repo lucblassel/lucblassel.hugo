@@ -1,3 +1,4 @@
 ---
 title: "Tags 🏷 "
+showBreadcrumbs: false
 ---

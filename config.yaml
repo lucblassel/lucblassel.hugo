@@ -61,7 +61,7 @@ languages:
       imageHeight: 400
       buttons:
         - name: Posts  📚
-          url: /posts
+          url: ./posts/
         - name: Publications  🗞 
           url: /publications
         - name: Tags  🏷
