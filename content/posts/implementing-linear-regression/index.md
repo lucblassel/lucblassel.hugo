@@ -359,4 +359,4 @@ $$
 
 In this case our regressor and the `scikit-learn` regressor both have an RMSE of \\(4.9277\\), with only a difference of \\(0.00008\%\\), so our model and the state of the art have an identical performance, which is quite reassuring.
 
-In the next post I'll talk about regularization and how we can add it to our linear regressor. In the meantime I hope you've liked this little write-up and if you want to take a closer look at the code it's all available in this repo: <a></a>[github.com/lucblassel/website_projects](https://github.com/lucblassel/website_projects/)
+In the [next post]( {{<relref "posts/regularization" >}} ) I'll talk about regularization and how we can add it to our linear regressor. In the meantime I hope you've liked this little write-up and if you want to take a closer look at the code it's all available in this repo: <a></a>[github.com/lucblassel/website_projects](https://github.com/lucblassel/website_projects/)

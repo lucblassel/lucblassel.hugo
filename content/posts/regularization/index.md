@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "How can we make linear regression better? Regularization."
-draft: true
 date: 2020-02-10 10:00:00
 excerpt_separator: <!--more-->
 feature: https://upload.wikimedia.org/wikipedia/commons/e/ed/Residuals_for_Linear_Regression_Fit.png
@@ -58,21 +57,26 @@ If this rings a bell its normal, if we have a two dimensional vector, this eucli
 
 You may be asking yourself OK but what is the L1 or the L2 norm. Well in general the Lp norm of \\(x\\) is noted \\(||x||_p\\) and is calculated as follows:  
 
+{{<longmath>}}
 $$
 ||x||_p = \bigg( \sum_{i=1}^n x_i^p \bigg)^{1/p}
 $$
+{{</longmath>}}
 
 So the L2 norm is:  
+
+{{<longmath>}}
 $$
 ||x||_2 = \bigg( \sum_{i=1}^n x_i^2 \bigg)^{1/2} = \sqrt{\sum_{i=1}^n x^2_i}
 $$
+{{</longmath>}}
 
-which, as the keen-eyed among you have already noticde, is simply the euclidean norm. And the L1 norm is simply the taxicab norm.
+which, as the keen-eyed among you have already noticed, is simply the euclidean norm. And the L1 norm is simply the taxicab norm.
 
 ## How does this fit in with linear regression ? 
-In effect regularization is just adding the norm of the weights vector *(except fot he bias term \\(\theta_0\\))* to the cost function. In this article I will only cover the L2 norm but the process is quite similar with the L1 norm.  
+In effect regularization is just adding the norm of the weights vector *(except fot he bias term \\(~\theta_0\\))* to the cost function. In this article I will only cover the L2 norm but the process is quite similar with the L1 norm.  
 
-OK, from now on I will assume that you have read the [previous post]({{< relref "/posts/implementing-linear-regression#how-do-we-compute-theta-values-" >}}), in which the math for the unregularized linear regression is explained and derived, and the names explained.  
+OK, from now on I will assume that you have read the [previous post]({{< relref "/posts/implementing-linear-regression#how-do-we-compute-theta-values-" >}}), in which the math for the unregularized linear regression is explained and derived, and the notation is introduced.  
 
 We had derived the following cost function \\(C\\):
 
@@ -126,7 +130,7 @@ def compute_cost(theta, X, y, lambda_):
 ```
 
 You will rememeber that the `@` operator is the `numpy` matrix multiplication operator, and for the regularization term we sum `theta` weight vector excluding the 1st element because we do not want to regularize the bias term.  
-Then we just need to update the `compute_gradient` function to add the gradient vector (with a leading 0 to fill up the bias term):   
+Then we just need to update the `compute_gradient` function to add the gradient vector (with a leading 0 to fill up the bias term, that we do not want to penalize):   
 
 ```python
 def compute_gradient(theta, X, y, lambda_):
@@ -144,3 +148,40 @@ def gradient_descent(X, y, theta, alpha, max_iters, lambda_=0):
         history.append(compute_cost(theta, X, y, lambda_))
     return theta, history
 ```
+
+And that's it, you now have a regularized linear regression, *easy peasy*. 
+
+## How does it compare to scikit-learn's version ? 
+
+In order to get an idea of how our home-grown model is performing I evaluated it in the same way as the previous post, that is to say I split the Boston housing dataset into a training and testing set, normalized features according to the mean and standard deviation computed on the training set.  
+I then used our gradient descent function to get the optimal \\(\theta\\) values on the training set. I then predict values for the testing set. 
+
+```python
+theta_init_reg = np.zeros((len(X_train_norm[0]),))
+theta_learned_reg, _ = gradient_descent(
+    X_train_norm, y_train, theta_init_reg, 0.1, 1000, 1.0
+)
+y_pred_reg = predict(X_test_norm, theta_learned_reg)
+```
+
+Since we used L2 normalization here, I will compare my method to the `Ridge` regressor from `scikit-learn`, using the same regularization strength of 1: 
+
+```python
+from sklearn.linear_model import Ridge
+
+ridge = Ridge(alpha=1)
+ridge.fit(X_train_norm[:, 1:], y_train)
+preds_ridge = ridge.predict(X_test_norm[:, 1:])
+```
+
+when comparing RMSE values computed on `y_pred_reg` and `preds_ridge`, we get almost identical RMSE values *(which hopefully makes sense to you)*. 
+
+```plaintext
+Our regularized model RMSE on test set: 4.971474178571149
+Scikit-model ridge RMSE on test set: 4.971527511444203
+```
+
+# Parting words
+
+All in all linear regression is super simple to implement, I hope you have a better understanding of how it works and why regularization is included in linbraries like `scikit-learn`. By the way the concept of regularization as a way to fight overfitting is very common in machine learning even in other methods than linear regression.  
+I hope you had fun reading this short series and if you have any feedback do not hesitate to let me know.
