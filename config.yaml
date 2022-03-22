@@ -10,7 +10,6 @@ outputs:
     - JSON
     - RSS
     - HTML
-    - Sitemap
 defaultContentLanguage: en
 languages:
   en:
@@ -23,30 +22,33 @@ languages:
       imageWidth: 400
       imageHeight: 400
       buttons:
-        - name: Posts
+        - name: Posts  📚
           url: /posts
-        - name: Publications
+        - name: Publications  🗞
           url: /publications
-        - name: Tags
+        - name: Tags  🏷
           url: /tags
-        - name: Search
+        - name: Search  🔍
           url: /search
-        - name: Archives
+        - name: Archives  🗃
           url: /archives
     menu:
       main:
         - name: Posts
           url: /posts/
           weight: 2
-        - name: About Me
-          url: /about/
-          weight: 3
         - name: Publications
           url: /publications/
+          weight: 3
+        - name: About Me
+          url: /about/
           weight: 4
         - name: Tags
           url: /tags/
           weight: 5
+        - name: Contact
+          url: /contact/
+          weight: 6
   fr:
     languageName: ":fr:"
     languageAltTitle: French
@@ -58,30 +60,33 @@ languages:
       imageWidth: 400
       imageHeight: 400
       buttons:
-        - name: Posts
+        - name: Posts  📚
           url: /posts
-        - name: Publications
+        - name: Publications  🗞 
           url: /publications
-        - name: Tags
+        - name: Tags  🏷
           url: /tags
-        - name: Recherche
+        - name: Recherche  🔍
           url: /search
-        - name: Archives
+        - name: Archives  🗃
           url: /archives
     menu:
       main:
         - name: Posts
           url: /posts/
           weight: 2
-        - name: Qui suis-je
-          url: /about/
-          weight: 3
         - name: Publications
           url: /publications/
+          weight: 3
+        - name: Qui suis-je
+          url: /about/
           weight: 4
         - name: Tags
           url: /tags/
           weight: 5
+        - name: Contact
+          url: /contact/
+          weight: 6
 
 params:
   displayFullLangName: true

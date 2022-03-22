@@ -1,8 +1,9 @@
 ---
-title: "About Me  🙋‍♂️"
-date: 2021-08-17T18:42:03+02:00
+title: "About Me  👨‍💻"
 type: about
 comments: false
+showBreadcrumbs: false
+showReadingTime: false
 ---
 
 I am a PhD student at the [Institut Pasteur](https://research.pasteur.fr/en/), working on applying machine learning techniques to biological sequence data (DNA and proteins mainly).

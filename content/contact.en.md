@@ -1,8 +1,9 @@
 ---
-title: "Contact"
-date: 2021-08-27T01:37:00+02:00
+title: "Contact me  📨"
 type: contact
 comments: false
+showBreadcrumbs: false
+showReadingTime: false
 ---
 
 If you want to get in touch you can send me a direct message on twitter, linkedin or by email:  

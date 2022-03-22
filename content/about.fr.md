@@ -1,8 +1,9 @@
 ---
-title: "Qui suis-je?  🙋‍♂️"
-date: 2021-08-17T18:42:03+02:00
+title: "Qui suis-je?  👨‍💻"
 type: about
 comments: false
+showBreadcrumbs: false
+showReadingTime: false
 ---
 
 Je suis actuellement doctorant à [l'Institut Pasteur](https://research.pasteur.fr/en/). Je travaille sur l'application de méthodes de machine learning à des séquences biologiques (ADN et protéines surtout.)

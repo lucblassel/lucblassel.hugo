@@ -1,8 +1,9 @@
 ---
 title: "Publications  🗞️"
-date: 2021-08-17T18:41:58+02:00
 type: publications
 comments: false
+showBreadcrumbs: false
+showReadingTime: false
 ---
 
 
@@ -33,3 +34,6 @@ Voznica, and Olivier Gascuel. 2021. “Origin, Evolution and Global Spread
 of SARS-CoV-2.” *Comptes Rendus. Biologies* 344 (1): 57–75.
 <https://doi.org/10.5802/crbiol.29>.
 
+---
+
+Find **me** on [Google scholar](https://scholar.google.fr/citations?user=RYs6rFwAAAAJ&hl=en&oi=ao) or [ORCID](https://orcid.org/0000-0002-6598-7673)
