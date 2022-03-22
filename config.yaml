@@ -1,21 +1,91 @@
 baseURL: https://lucblassel.com
 languageCode: en-us
-title: Luc Blassel
+title: LucBlassel.com
 theme: PaperMod
 env: production
 copyright: © Luc Blassel 2021,
+enableEmoji: true
 outputs:
   home:
     - JSON
     - RSS
     - HTML
+    - Sitemap
+defaultContentLanguage: en
+languages:
+  en:
+    languageName: ":us:"
+    profileMode:
+      enabled: true
+      title: LucBlassel.com
+      subtitle: "PhD Student - Machine Learning - Computational Biology"
+      imageURL: https://s.gravatar.com/avatar/d885cad4ccb230040b32a58d35a0dfda?s=800
+      imageWidth: 400
+      imageHeight: 400
+      buttons:
+        - name: Posts
+          url: /posts
+        - name: Publications
+          url: /publications
+        - name: Tags
+          url: /tags
+        - name: Search
+          url: /search
+        - name: Archives
+          url: /archives
+    menu:
+      main:
+        - name: Posts
+          url: /posts/
+          weight: 2
+        - name: About Me
+          url: /about/
+          weight: 3
+        - name: Publications
+          url: /publications/
+          weight: 4
+        - name: Tags
+          url: /tags/
+          weight: 5
+  fr:
+    languageName: ":fr:"
+    languageAltTitle: French
+    profileMode:
+      enabled: true
+      title: LucBlassel.com
+      subtitle: "Doctorant - Machine Learning - Bioinformatique"
+      imageURL: https://s.gravatar.com/avatar/d885cad4ccb230040b32a58d35a0dfda?s=800
+      imageWidth: 400
+      imageHeight: 400
+      buttons:
+        - name: Posts
+          url: /posts
+        - name: Publications
+          url: /publications
+        - name: Tags
+          url: /tags
+        - name: Recherche
+          url: /search
+        - name: Archives
+          url: /archives
+    menu:
+      main:
+        - name: Posts
+          url: /posts/
+          weight: 2
+        - name: Qui suis-je
+          url: /about/
+          weight: 3
+        - name: Publications
+          url: /publications/
+          weight: 4
+        - name: Tags
+          url: /tags/
+          weight: 5
+
 params:
+  displayFullLangName: true
   owner: Luc Blassel
-  keywords:
-    - PhD. Student
-    - Computational Biology
-    - machine learning
-  gravatarId: d885cad4ccb230040b32a58d35a0dfda
   getFormEndpoint: https://getform.io/f/7b67ea7b-ca18-43b0-a2b5-c9b35b57581e
   reCaptchaKey: 6Lf49iccAAAAAP2_whsMpa8hPKk-3Zy_BbiIx2_y
   fontAwesomeKit: 1c4834cc82
@@ -26,27 +96,6 @@ params:
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   comments: true
-  homeInfoParams:
-    Title: LucBlassel.com
-    Content: "Hi there! <div style='border-radius: 100%;'>![This is me](https://s.gravatar.com/avatar/d885cad4ccb230040b32a58d35a0dfda?s=400)</div>"
-  profileMode:
-    enabled: true
-    title: LucBlassel.com
-    subtitle: "PhD Student - Machine Learning - Computational Biology"
-    imageURL: https://s.gravatar.com/avatar/d885cad4ccb230040b32a58d35a0dfda?s=800
-    imageWidth: 400
-    imageHeight: 400
-    buttons:
-      - name: Posts
-        url: /posts
-      - name: Publications
-        url: /publications
-      - name: Tags
-        url: /tags
-      - name: Search
-        url: /search
-      - name: Archives
-        url: /archives
   socialIcons:
     - name: Github
       url: https://github.com/lucblassel
@@ -65,17 +114,3 @@ markup:
   goldmark:
     extensions:
       footnote: true
-menu:
-  main:
-    - name: Posts
-      url: /posts/
-      weight: 2
-    - name: About
-      url: /about/
-      weight: 3
-    - name: Publications
-      url: /publications/
-      weight: 4
-    - name: Tags
-      url: /tags/
-      weight: 5
