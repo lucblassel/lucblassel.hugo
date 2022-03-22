@@ -1,0 +1,121 @@
+baseURL: https://lucblassel.com
+languageCode: en-us
+title: LucBlassel.com
+theme: PaperMod
+env: production
+copyright: © Luc Blassel 2021,
+enableEmoji: true
+outputs:
+  home:
+    - JSON
+    - RSS
+    - HTML
+defaultContentLanguage: en
+languages:
+  en:
+    languageName: ":us:"
+    profileMode:
+      enabled: true
+      title: LucBlassel.com
+      subtitle: "PhD Student - Machine Learning - Computational Biology"
+      imageURL: https://s.gravatar.com/avatar/d885cad4ccb230040b32a58d35a0dfda?s=800
+      imageWidth: 400
+      imageHeight: 400
+      buttons:
+        - name: Posts  📚
+          url: /posts
+        - name: Publications  🗞
+          url: /publications
+        - name: Tags  🏷
+          url: /tags
+        - name: Search  🔍
+          url: /search
+        - name: Archives  🗃
+          url: /archives
+    menu:
+      main:
+        - name: Posts
+          url: /posts/
+          weight: 2
+        - name: Publications
+          url: /publications/
+          weight: 3
+        - name: About Me
+          url: /about/
+          weight: 4
+        - name: Tags
+          url: /tags/
+          weight: 5
+        - name: Contact
+          url: /contact/
+          weight: 6
+  fr:
+    languageName: ":fr:"
+    languageAltTitle: French
+    profileMode:
+      enabled: true
+      title: LucBlassel.com
+      subtitle: "Doctorant - Machine Learning - Bioinformatique"
+      imageURL: https://s.gravatar.com/avatar/d885cad4ccb230040b32a58d35a0dfda?s=800
+      imageWidth: 400
+      imageHeight: 400
+      buttons:
+        - name: Posts  📚
+          url: /posts
+        - name: Publications  🗞 
+          url: /publications
+        - name: Tags  🏷
+          url: /tags
+        - name: Recherche  🔍
+          url: /search
+        - name: Archives  🗃
+          url: /archives
+    menu:
+      main:
+        - name: Posts
+          url: /posts/
+          weight: 2
+        - name: Publications
+          url: /publications/
+          weight: 3
+        - name: Qui suis-je
+          url: /about/
+          weight: 4
+        - name: Tags
+          url: /tags/
+          weight: 5
+        - name: Contact
+          url: /contact/
+          weight: 6
+
+params:
+  displayFullLangName: true
+  owner: Luc Blassel
+  getFormEndpoint: https://getform.io/f/7b67ea7b-ca18-43b0-a2b5-c9b35b57581e
+  reCaptchaKey: 6Lf49iccAAAAAP2_whsMpa8hPKk-3Zy_BbiIx2_y
+  fontAwesomeKit: 1c4834cc82
+  disableSpecial1stPost: true
+  ShowReadingTime: true
+  ShowToc: true
+  TocOpen: false
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  comments: true
+  socialIcons:
+    - name: Github
+      url: https://github.com/lucblassel
+    - name: Work
+      url: https://research.pasteur.fr/en/member/luc-blassel/
+    - name: LinkedIn
+      url: https://www.linkedin.com/in/luc-blassel/
+    - name: ORCID
+      url: https://orcid.org/0000-0002-6598-7673
+    - name: scholar
+      url: https://scholar.google.fr/citations?user=RYs6rFwAAAAJ&hl=en&oi=ao
+    - name: Twitter
+      url: https://twitter.com/lucblassel
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    extensions:
+      footnote: true
