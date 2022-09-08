@@ -6,6 +6,11 @@ showBreadcrumbs: false
 showReadingTime: false
 ---
 
+**Blassel, Luc**, Paul Medvedev and Rayan Chikhi. 2022. 
+“Mapping-friendly sequence reductions: going beyond homopolymer compression”.  
+*accepté pour les proceedings [RECOMB-SEQ 2022](https://recomb2022.net/recomb-seq/), iScience*  
+
+---
 
 **Blassel, Luc**, Anna Zhukova, Christian J Villabona-Arenas, Katherine E
 Atkins, Stéphane Hué, and Olivier Gascuel. 2021. **“Drug Resistance

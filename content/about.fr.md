@@ -6,7 +6,7 @@ showBreadcrumbs: false
 showReadingTime: false
 ---
 
-Je suis actuellement doctorant à [l'Institut Pasteur](https://research.pasteur.fr/en/). Je travaille sur l'application de méthodes de machine learning à des séquences biologiques (ADN et protéines surtout.)
+Je suis actuellement [doctorant](https://www.theses.fr/s293917) à [l'Institut Pasteur](https://research.pasteur.fr/en/). Je travaille sur l'application de méthodes de machine learning à des séquences biologiques.
 
 Je suis passioné par l'intersection entre le ML et la Biology. 
 
