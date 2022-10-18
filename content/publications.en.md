@@ -6,8 +6,9 @@ showBreadcrumbs: false
 showReadingTime: false
 ---
 
-**Blassel, Luc**, Paul Medvedev and Rayan Chikhi. 2022. 
-**“Mapping-friendly sequence reductions: going beyond homopolymer compression”**.  
+<!-- **Blassel, Luc**, Paul Medvedev and Rayan Chikhi. 2022. 
+**“Mapping-friendly sequence reductions: going beyond homopolymer compression”**. *iScience* 
+
 *accepted in the [RECOMB-SEQ 2022](https://recomb2022.net/recomb-seq/) proceedings, iScience*  
 
 ---
@@ -39,6 +40,7 @@ Voznica, and Olivier Gascuel. 2021. **“Origin, Evolution and Global Spread
 of SARS-CoV-2.”** *Comptes Rendus. Biologies* 344 (1): 57–75.  
 [10.5802/crbiol.29](https://doi.org/10.5802/crbiol.29).
 
----
+--- -->
+
 
 Find **me** on [Google scholar](https://scholar.google.fr/citations?user=RYs6rFwAAAAJ&hl=en&oi=ao) or [ORCID](https://orcid.org/0000-0002-6598-7673)
