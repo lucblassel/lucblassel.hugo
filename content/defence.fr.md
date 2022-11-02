@@ -9,7 +9,7 @@ showTOC: false
 Bonjour à tous,  
 Vous le savez sans-doutes, j'ai passé ces dernières années à préparer ma thèse de doctorat en bioinformatique à l'Institut Pasteur. Je soutiendrais donc bientôt cette thèse intitulée **"Des séquences au savoir, améliorer et apprendre des alignements de séquences"**.  
 
-Cette soutenance se déroulera le **2 Décembre** à **14h**, sur le [campus Jussieu](https://goo.gl/maps/fV5BX99xdRsy6wNy7) de Sorbonne Université. Elle se tiendra dans l'amphithéâtre **Durand** du batiment **Esclangon** *(cf. carte ci-dessous)*.  
+Cette soutenance se déroulera le **2 Décembre** à **14h**, sur le [campus Jussieu](https://goo.gl/maps/fV5BX99xdRsy6wNy7) de Sorbonne Université. Elle se tiendra dans l'amphithéâtre **Durand** du batiment **Esclangon** *(cf. carte ci-dessous)*. Un évenement de calendrier est disponible [ici](/files/defence.ics).  
 Si vous ne pouvez pas venir, pas de soucis! La soutenance sera aussi joignable en visioconférence via Microsoft Teams (lien [ici]((https://teams.microsoft.com/l/meetup-join/19%3ameeting_YjQ2NDliYjktMzQ5OS00MDc5LWIyYzItNmFkNjdhMmRmMGM3%40thread.v2/0?context=%7b%22Tid%22%3a%22096815dc-d9eb-4bc3-a5a3-53c77e7d34e2%22%2c%22Oid%22%3a%22efed87df-6c6d-40e8-8d70-14ad4e775309%22%7d)))  
 
 La soutenance sera suivie d'un petit pot avec de la nourriture et des boissons, puis d'une soirée dans un bar proche *(détails à venir)*. Si vous ne pouvez pas assister à la soutenance ou au pot j'espère que vous pourrez venir au bar!

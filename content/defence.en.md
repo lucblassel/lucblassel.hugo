@@ -9,7 +9,7 @@ showTOC: false
 Hello to all,  
 as you might now for the last couple of years I have been preparing my PhD and the time has finally come for it to end. I will soon be defending my PhD called **"From sequences to knowledge, improving and learning from sequence alignments"**.  
 
-It will be happening on **December 2nd** at **2:PM**, at the [Jussieu campus](https://goo.gl/maps/fV5BX99xdRsy6wNy7) of Sorbonne université, in the **Durand** auditorium of the **Esclangon** building *(cf. map below)*.  
+It will be happening on **December 2nd** at **2:PM**, at the [Jussieu campus](https://goo.gl/maps/fV5BX99xdRsy6wNy7) of Sorbonne université, in the **Durand** auditorium of the **Esclangon** building *(cf. map below)*. You can download a calendar event [here](/files/defence.ics).  
 If you cannot come in person, no problem! The defence will also be attendable remotely with Microsoft Teams (link [here](https://teams.microsoft.com/l/meetup-join/19%3ameeting_YjQ2NDliYjktMzQ5OS00MDc5LWIyYzItNmFkNjdhMmRmMGM3%40thread.v2/0?context=%7b%22Tid%22%3a%22096815dc-d9eb-4bc3-a5a3-53c77e7d34e2%22%2c%22Oid%22%3a%22efed87df-6c6d-40e8-8d70-14ad4e775309%22%7d))  
 
 It will be followed by some drinks and some food at the university and then by a party at a nearby bar *(details T.B.A)*. If you cannot make it to the defence I hope you can at least make it to the bar!
