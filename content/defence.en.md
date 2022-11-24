@@ -9,10 +9,10 @@ showTOC: false
 Hello to all,  
 as you might now for the last couple of years I have been preparing my PhD and the time has finally come for it to end. I will soon be defending my PhD called **"From sequences to knowledge, improving and learning from sequence alignments"**. This defence will be **in English**.  
 
-It will be happening on **December 2nd** at **2:PM**, at the [Jussieu campus](https://goo.gl/maps/fV5BX99xdRsy6wNy7) of Sorbonne université, in the **Durand** auditorium of the **Esclangon** building *(cf. map below)*. You can download a calendar event [here](/files/defence.ics).  
+It will be happening on **December 2nd** at **1:30PM**, at the [Jussieu campus](https://goo.gl/maps/fV5BX99xdRsy6wNy7) of Sorbonne université, in the **Durand** auditorium of the **Esclangon** building *(cf. map below)*. You can download a calendar event [here](/files/defence.ics).  
 If you cannot come in person, no problem! The defence will also be attendable remotely with Microsoft Teams (link [here](https://teams.microsoft.com/l/meetup-join/19%3ameeting_YjQ2NDliYjktMzQ5OS00MDc5LWIyYzItNmFkNjdhMmRmMGM3%40thread.v2/0?context=%7b%22Tid%22%3a%22096815dc-d9eb-4bc3-a5a3-53c77e7d34e2%22%2c%22Oid%22%3a%22efed87df-6c6d-40e8-8d70-14ad4e775309%22%7d))  
 
-It will be followed by some drinks and some food at the university and then by a party at a nearby bar *(details T.B.A)*. If you cannot make it to the defence I hope you can at least make it to the bar!
+It will be followed by some drinks and some food in the **Atrium** building of the university *(cf. map below)* and then by a party at a nearby bar: **The Baker Street Pub** *(details [below](#the-after-party))*. If you cannot make it to the defence I hope you can at least make it to the bar!
 
 ![Map of the campus](/images/amphi_durand.jpg#center)
 
@@ -43,15 +43,21 @@ The tentative schedule of the defence is as follows:
 
 |   |   |   |
 |---|---|---|
-| **2** PM    | **2:45** PM         | PhD Presentation |
-| **2:45** PM | **3:30** ~ **4** PM | Jury Questions |
-| **4** PM    | **4:30** PM         | Jury Deliberation |
-| **4:30** PM | **4:45** PM         | Jury Verdict  |
-| **4:45** PM | **6:30** PM         | Food and Drinks  |
-| **7** PM    | **?**               | Party 🎉 |
+| **1:30** PM    | **2:15** PM         | PhD Presentation |
+| **2:15** PM | **3** ~ **3:30** PM | Jury Questions |
+| **3:30** PM    | **4** PM         | Jury Deliberation |
+| **4** PM | **4:15** PM         | Jury Verdict  |
+| **4:15** PM | **6** PM         | Food and Drinks  |
+| **6** PM    | **?**               | Party 🎉 |
 
 {{< /markdowntable >}}
 
+## The after party
+The party will be held at the **Baker Street Pub** at *9 rue des boulangers*. It is very close to the university. We will probably head over there around 6PM. I have booked a private-*ish* space in the bar. We will be able to play our own music, however the spot is underground and there will be no internet so I need to elaborate a playlist. Here is [a link](https://open.spotify.com/playlist/1vVTYDkc3iacBF9dWZdGZY?si=c3c5c2b5a7ca4fb1&pt=a8e7de3f76ce9ab1b003c7471a40160f) to this shared playlist so you can add the songs you want to listen to:  
+
+{{< rawhtml >}}
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1vVTYDkc3iacBF9dWZdGZY?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+{{< /rawhtml >}}
 
 ## My thesis
 
