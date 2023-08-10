@@ -16,8 +16,8 @@ languages:
     languageName: ":us:"
     profileMode:
       enabled: true
-      title: LucBlassel.com
-      subtitle: "PhD Student - Machine Learning - Computational Biology"
+      title: Luc Blassel
+      subtitle: "PhD - Machine Learning - Computational Biology"
       imageURL: https://s.gravatar.com/avatar/d885cad4ccb230040b32a58d35a0dfda?s=800
       imageWidth: 400
       imageHeight: 400
@@ -54,8 +54,8 @@ languages:
     languageAltTitle: French
     profileMode:
       enabled: true
-      title: LucBlassel.com
-      subtitle: "Doctorant - Machine Learning - Bioinformatique"
+      title: Luc Blassel
+      subtitle: "Docteur - Machine Learning - Bioinformatique"
       imageURL: https://s.gravatar.com/avatar/d885cad4ccb230040b32a58d35a0dfda?s=800
       imageWidth: 400
       imageHeight: 400
