@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Mapping-friendly sequence reductions: Going beyond homopolymer compression",
+    "venue": "RECOMB-SEQ 2022",
+    "date": "2022-05-21",
+    "slides": "/files/RECOMB-SEQ-22-slides.pdf"
+  },
+  {
+    "title": "Can we improve analyses by transforming DNA ?",
+    "venue": "RECOMB-SEQ/CCB Joint COmmunication Session 2022",
+    "date": "2022-05-21",
+    "slides": "/files/RECOMB-CCB-Joint-session-slides.pdf",
+    "comment": "second place award for jargon-free scientific communication"
+  },
+  {
+    "title": "Phyloformer: fast, accurate and versatile phylogenetic reconstruction with deep neural networks",
+    "venue": "MCEB 2024",
+    "date": "2024-06-20",
+    "slides": "/files/slides_mceb_2024.pdf",
+    "source": "/files/slides_mceb_2024.tar.xz"
+  }
+]
