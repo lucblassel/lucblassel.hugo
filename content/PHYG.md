@@ -22,6 +22,8 @@ Lien vers le notebook colab:
 
 ## Information additionelles
 
+Slides du cours [ici](/files/cours-phyg.pdf)  
+
 Lien vers le papier pour plus d'information:  
 [doi.org/10.1101/2024.06.17.599404](https://doi.org/10.1101/2024.06.17.599404)
 
