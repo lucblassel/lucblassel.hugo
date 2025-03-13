@@ -1,22 +1,2 @@
 [
-  {
-    "id": "phyloformer",
-    "abstract": "Phylogenetic inference aims at reconstructing the tree describing the evolution of a set of sequences descending from a common ancestor. The high computational cost of state-of-the-art Maximum likelihood and Bayesian inference methods limits their usability under realistic evolutionary models. Harnessing recent advances in likelihood-free inference and geometric deep learning, we introduce Phyloformer, a fast and accurate method for evolutionary distance estimation and phylogenetic reconstruction. Sampling many trees and sequences under an evolutionary model, we train the network to learn a function that enables predicting the former from the latter. Under a commonly used model of protein sequence evolution and exploiting GPU acceleration, it outpaces fast distance methods while matching maximum likelihood accuracy on simulated and empirical data. Under more complex models, some of which include dependencies between sites, it outperforms other methods. Our results pave the way for the adoption of sophisticated realistic models for phylogenetic inference.",
-    "accessed": { "date-parts": [[2021, 10, 1]] },
-    "author": [
-      { "family": "Nesterenko", "given": "Luca" },
-      { "family": "Blassel", "given": "Luc" },
-      { "family": "Veber", "given": "Philippe" },
-      { "family": "Boussau", "given": "Bastien" },
-      { "family": "Jacob", "given": "Laurent" }
-
-    ],
-    "container-title": "biorxiv",
-    "DOI": "10.1101/2024.06.17.599404",
-    "issued": { "date-parts": [[2024, 6, 22]] },
-    "language": "en",
-    "title": "Phyloformer: Fast, accurate and versatile phylogenetic reconstruction with deep neural networks",
-    "type": "preprint",
-    "URL": "https://www.biorxiv.org/content/10.1101/2024.06.17.599404v1"
-  }
 ]

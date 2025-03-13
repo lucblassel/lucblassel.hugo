@@ -1,5 +1,47 @@
 [
   {
+    "id": "http://zotero.org/users/5156025/items/FBFGDKM5",
+    "type": "article-journal",
+    "abstract": "Phylogenetic inference aims at reconstructing the tree describing the evolution of a set of sequences descending from a common ancestor. The high computational cost of state-of-the-art maximum likelihood and Bayesian inference methods limits their usability under realistic evolutionary models. Harnessing recent advances in likelihood-free inference and geometric deep learning, we introduce Phyloformer, a fast and accurate method for evolutionary distance estimation and phylogenetic reconstruction. Sampling many trees and sequences under an evolutionary model, we train the network to learn a function that enables predicting a tree from a multiple sequence alignment. On simulated data, we compare Phyloformer to FastME –a distance method– and two maximum likelihood methods: FastTree and IQTree. Under a commonly used model of protein sequence evolution and exploiting GPU acceleration, Phyloformer outpaces all other approaches and exceeds their accuracy in the Kuhner-Felsenstein metric that accounts for both the topology and branch lengths. In terms of topological accuracy alone, Phyloformer outperforms FastME, but falls behind maximum likelihood approaches, especially as the number of sequences increases. When a model of sequence evolution that includes dependencies between sites is used, Phyloformer outperforms all other methods across all metrics on alignments with fewer than 80 sequences. On 3801 empirical gene alignments from 5 different datasets, Phyloformer matches the topological accuracy of the two maximum likelihood implementations. Our results pave the way for the adoption of sophisticated realistic models for phylogenetic inference.",
+    "container-title": "Molecular Biology and Evolution",
+    "DOI": "10.1093/molbev/msaf051",
+    "ISSN": "1537-1719",
+    "journalAbbreviation": "Molecular Biology and Evolution",
+    "page": "msaf051",
+    "source": "Silverchair",
+    "title": "Phyloformer: Fast, accurate and versatile phylogenetic reconstruction with deep neural networks",
+    "title-short": "Phyloformer",
+    "URL": "https://doi.org/10.1093/molbev/msaf051",
+    "author": [
+      {
+        "family": "Nesterenko",
+        "given": "Luca"
+      },
+      {
+        "family": "Blassel",
+        "given": "Luc"
+      },
+      {
+        "family": "Veber",
+        "given": "Philippe"
+      },
+      {
+        "family": "Boussau",
+        "given": "Bastien"
+      },
+      {
+        "family": "Jacob",
+        "given": "Laurent"
+      }
+    ],
+    "accessed": {
+      "date-parts": [["2025", 3, 13]]
+    },
+    "issued": {
+      "date-parts": [["2025", 3, 11]]
+    }
+  },
+  {
     "id": "blasselDrugResistanceMutations2021",
     "abstract": "Drug resistance mutations appear in HIV under treatment pressure. Resistant variants can be transmitted to treatment-naive individuals, which can lead to rapid virological failure and can limit treatment options. Consequently, quantifying the prevalence, emergence and transmission of drug resistance is critical to effectively treating patients and to shape health policies. We review recent bioinformatics developments and in particular describe: (1) the machine learning approaches intended to predict and explain the level of resistance of HIV variants from their sequence data; (2) the phylogenetic methods used to survey the emergence and dynamics of resistant HIV transmission clusters; (3) the impact of deep sequencing in studying within-host and between-host genetic diversity of HIV variants, notably regarding minority resistant variants.",
     "accessed": { "date-parts": [[2021, 10, 1]] },
