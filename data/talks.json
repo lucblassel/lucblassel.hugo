@@ -18,5 +18,12 @@
     "date": "2024-06-20",
     "slides": "/files/slides_mceb_2024.pdf",
     "source": "/files/slides_mceb_2024.tar.xz"
+  },
+  {
+    "title": "PhyloFormer and phylogenetic reconstruction with deep neural networks",
+    "venue": "LISN Bioinfo seminar",
+    "date": "2024-11-21",
+    "slides": "/files/slides_lisn_2024.pdf",
+    "source": "/files/slides_lisn_2024.tar.xz"
   }
 ]
