@@ -112,8 +112,8 @@ params:
       url: https://orcid.org/0000-0002-6598-7673
     - name: scholar
       url: https://scholar.google.fr/citations?user=RYs6rFwAAAAJ&hl=en&oi=ao
-    - name: Twitter
-      url: https://twitter.com/lucblassel
+    - name: Bluesky
+      url:  https://bsky.app/profile/lblassel.bsky.social
 markup:
   defaultMarkdownHandler: goldmark
   goldmark:
