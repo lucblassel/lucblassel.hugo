@@ -9,5 +9,5 @@ showReadingTime: false
 Si vous souhaitez me contacter vous pouvez m'envoyer un message direct sur twitter, linkedin ou par courriel:  
 
 ```plaintext
-    luc [dot] blassel [plus] contact [at] gmail [dot] com
+    luc [at] lucblassel [dot] com
 ```

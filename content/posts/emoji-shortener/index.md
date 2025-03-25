@@ -10,7 +10,7 @@ tags:
 
 This is a little write up of a very small project I did, inspired by [Coding Garden with CJ](https://coding.garden) on youtube & twitch _(specifically [this video](https://www.youtube.com/watch?v=gq5yubc1u18))_, and [Net Ninja](https://www.thenetninja.co.uk) express tutorials:  
 A URL-shortener that uses a sequence of emojis to encode each URL.  
-The code is available on [github](https://github.com/lucblassel/), and you can try it out at [emoj.yt](http://emoj.yt).
+The code is available on [github](https://github.com/lucblassel/), and you can try it out at [emoj.yt](https://emoji-shortener-frontend.vercel.app).
 
 <!--more-->
 
@@ -250,7 +250,7 @@ I decided to have 2 pages, the main page with the latest entries in the database
 
 For all the calls to my backend I used the `fetch` API, and for the user input form I used [Formik](https://formik.org) which was really easy to learn and has top-notch documentation.
 
-I deployed the frontend to Vercel _(where this website is also hosted 😉)_ and connected my domain to it. And voila! it's available at [emoj.yt](https://emoj.yt) for all to try.
+I deployed the frontend to Vercel _(where this website is also hosted 😉)_ and connected my domain to it. And voila! it's available at [emoj.yt](https://emoji-shortener-frontend.vercel.app) for all to try.
 
 ## In the end
 
