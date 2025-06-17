@@ -25,5 +25,17 @@
     "date": "2024-11-21",
     "slides": "/files/slides_lisn_2024.pdf",
     "source": "/files/slides_lisn_2024.tar.xz"
+  },
+  {
+    "title": "Deep likelihood-free inference of phylogenetic trees",
+    "venue": "DEELOGENY meeting",
+    "date": "2025-06-13",
+    "slides": "/files/slides_deelogeny_2025.pdf"
+  },
+  {
+    "title": "Deep likelihood-free inference of phylogenetic trees",
+    "venue": "CQSB Seminar",
+    "date": "2025-06-17",
+    "slides": "/files/slides_cqsb_2025.pdf"
   }
 ]
