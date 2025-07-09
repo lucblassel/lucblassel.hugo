@@ -1,8 +1,0 @@
-<div class="sm:h-30 bg-gray-100 dark:bg-gray-800 flex flex-col gap-4 footer dark:text-gray-50 p-10">
-    <p class="text-center">Copyright (c) {{ now.Format "2006"}} {{ .Site.Copyright }}</p>
-    <div class="mx-auto flex flex-wrap justify-center">
-        {{ range .Site.Menus.socials }}
-          <a class="px-2 dark:hover:text-gray-300 hover:text-gray-600" href="{{ .URL }}">{{ .Pre }} {{ .Name }}</a>
-        {{ end }}
-    </div>
-</div>
