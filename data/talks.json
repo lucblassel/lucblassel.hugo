@@ -47,8 +47,13 @@
   {
     "title": "Deep end-to-end likelihood-free inference of phylogenetic trees",
     "venue": "MLCB 2025",
-    "date": "2025-11-08",
+    "date": "2025-09-11",
     "slides": "/files/slides_mlcb_2025.pdf"
+  },
+  {
+    "title": "Likelihood-free inference of phylogenetic tree posterior distributions",
+    "venue": "LEGO 2025",
+    "date": "2025-11-27",
+    "slides": "/files/slides_LEGO_2025.pdf"
   }
-
 ]
