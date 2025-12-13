@@ -55,5 +55,11 @@
     "venue": "LEGO 2025",
     "date": "2025-11-27",
     "slides": "/files/slides_LEGO_2025.pdf"
+  },
+{
+    "title": "Likelihood-free inference of phylogenetic tree posterior distributions",
+    "venue": "LEGEND 2025",
+    "date": "2025-12-11",
+    "slides": "/files/slides_legend_2025.pdf"
   }
 ]
